@@ -35,12 +35,13 @@ namespace GestionEquipeHockey.Classes
 
 
         // Constructeur de la class Joueurs_avant
-        public Joueurs_avant(string p_nom = "", string p_prenom = "", DateTime p_date_naissance = default, float p_poids = 0, float p_taille = 0,
-            string p_position = "", int p_numero = 0, string p_cote = "", string p_nom_equipe = "", string p_ville_equipe = "",
-            string p_arena_equipe = "", string p_pays_equipe = "", int p_nb_matchs = 0, int p_minutes_punition = 0, int p_nb_buts = 0, int p_nb_passes = 0, int p_nb_mises_echec = 0) 
-            : base (p_nom,p_prenom,p_date_naissance,p_poids,p_taille, p_position,p_numero, p_cote,p_nom_equipe,p_ville_equipe,
+        public Joueurs_avant(string p_code_joueur = "", string p_nom = "", string p_prenom = "", DateTime p_date_naissance = default, float p_poids = 0, float p_taille = 0,
+            string p_position = "", int p_numero = 0, string p_cote = "", string p_nom_equipe = "Canadien", string p_ville_equipe = "Montréal",
+            string p_arena_equipe = "Centre Bell", string p_pays_equipe = "Canada", int p_nb_matchs = 0, int p_minutes_punition = 0, int p_nb_buts = 0, int p_nb_passes = 0, int p_nb_mises_echec = 0) 
+            : base (p_code_joueur, p_nom,p_prenom,p_date_naissance,p_poids,p_taille, p_position,p_numero, p_cote,p_nom_equipe,p_ville_equipe,
                     p_arena_equipe,p_pays_equipe,p_nb_matchs,p_minutes_punition)
         {
+            
             this.nb_buts = p_nb_buts;
             this.nb_passes = p_nb_passes;
             this.nb_mises_echec = p_nb_mises_echec;

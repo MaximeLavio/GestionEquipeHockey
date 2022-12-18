@@ -38,6 +38,9 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnSauvegarderGardiens = new System.Windows.Forms.Button();
+            this.btnSauvegarderJoueurs = new System.Windows.Forms.Button();
+            this.btnActualiser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -146,7 +149,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(858, 452);
+            this.button2.Location = new System.Drawing.Point(849, 446);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 30);
@@ -154,11 +157,45 @@
             this.button2.Text = "Afficher";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // btnSauvegarderGardiens
+            // 
+            this.btnSauvegarderGardiens.Location = new System.Drawing.Point(991, 76);
+            this.btnSauvegarderGardiens.Name = "btnSauvegarderGardiens";
+            this.btnSauvegarderGardiens.Size = new System.Drawing.Size(199, 30);
+            this.btnSauvegarderGardiens.TabIndex = 10;
+            this.btnSauvegarderGardiens.Text = "Sauvegarder modification";
+            this.btnSauvegarderGardiens.UseVisualStyleBackColor = true;
+            this.btnSauvegarderGardiens.Click += new System.EventHandler(this.btnSauvegarderGardiens_Click);
+            // 
+            // btnSauvegarderJoueurs
+            // 
+            this.btnSauvegarderJoueurs.Location = new System.Drawing.Point(991, 446);
+            this.btnSauvegarderJoueurs.Name = "btnSauvegarderJoueurs";
+            this.btnSauvegarderJoueurs.Size = new System.Drawing.Size(199, 30);
+            this.btnSauvegarderJoueurs.TabIndex = 12;
+            this.btnSauvegarderJoueurs.Text = "Sauvegarder modification";
+            this.btnSauvegarderJoueurs.UseVisualStyleBackColor = true;
+            this.btnSauvegarderJoueurs.Click += new System.EventHandler(this.btnSauvegarderJoueurs_Click);
+            // 
+            // btnActualiser
+            // 
+            this.btnActualiser.Location = new System.Drawing.Point(858, 128);
+            this.btnActualiser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualiser.Name = "btnActualiser";
+            this.btnActualiser.Size = new System.Drawing.Size(117, 30);
+            this.btnActualiser.TabIndex = 13;
+            this.btnActualiser.Text = "Actualiser";
+            this.btnActualiser.UseVisualStyleBackColor = true;
+            this.btnActualiser.Click += new System.EventHandler(this.btnActualiser_Click);
+            // 
             // FormAffichage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1486, 729);
+            this.Controls.Add(this.btnActualiser);
+            this.Controls.Add(this.btnSauvegarderJoueurs);
+            this.Controls.Add(this.btnSauvegarderGardiens);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
@@ -192,5 +229,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSauvegarderGardiens;
+        private System.Windows.Forms.Button btnSauvegarderJoueurs;
+        private System.Windows.Forms.Button btnActualiser;
     }
 }

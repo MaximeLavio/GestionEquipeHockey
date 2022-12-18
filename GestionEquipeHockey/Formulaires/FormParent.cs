@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,7 @@ namespace GestionEquipeHockey.Formulaires
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formulaires.FormModifier f = new Formulaires.FormModifier();
-            f.MdiParent = this;
-            f.Show();
+            
         }
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +62,37 @@ namespace GestionEquipeHockey.Formulaires
         }
 
         private void sauvegarderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modifierJoueursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formulaires.FormModifierJoueurs f = new Formulaires.FormModifierJoueurs();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void modifierGardiensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formulaires.FormModifierGardiens f = new Formulaires.FormModifierGardiens();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void modifierContratsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formulaires.FormModifierContrats f = new Formulaires.FormModifierContrats();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        private void sauvegarderToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void FormParent_Load(object sender, EventArgs e)
         {
 
         }

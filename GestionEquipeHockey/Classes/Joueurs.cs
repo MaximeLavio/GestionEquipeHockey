@@ -9,6 +9,7 @@ namespace GestionEquipeHockey.Classes
     abstract public class Joueurs
     {
         // Attributs de la classe joueurs
+        private string code_joueur;            // Numéro unique à chaque joueur
         private string nom_joueur;         // Nom du joueur
         private string prenom_joueur;      // Prénom du joueur
         private DateTime date_naissance;   //Date de naissance du joueur
@@ -26,6 +27,11 @@ namespace GestionEquipeHockey.Classes
 
 
         // Propriétés Get/Set des attributs
+        public string Code_Joueur
+        {
+            get { return code_joueur; }
+            set { code_joueur = value; }
+        }
         public string Nom_Joueur
         {
             get { return nom_joueur; }
@@ -101,10 +107,11 @@ namespace GestionEquipeHockey.Classes
 
 
         // Constructeur de la classe Joueurs
-        public Joueurs(string p_nom = "", string p_prenom = "", DateTime p_date_naissance = default, float p_poids = 0, float p_taille = 0,
+        public Joueurs(string p_code_joueur = "", string p_nom = "", string p_prenom = "", DateTime p_date_naissance = default, float p_poids = 0, float p_taille = 0,
             string p_position = "", int p_numero = 0, string p_cote = "", string p_nom_equipe = "Canadien", string p_ville_equipe = "Montréal",
             string p_arena_equipe = "Centre Bell", string p_pays_equipe = "Canada", int p_nb_matchs = 0, int p_minutes_punition = 0)
         {
+            this.code_joueur = p_code_joueur;
             this.nom_joueur = p_nom;                      
             this.prenom_joueur = p_prenom;                 
             this.date_naissance = p_date_naissance; 

@@ -47,6 +47,8 @@
             this.btnAjouterJoueur = new System.Windows.Forms.Button();
             this.lblPosition = new System.Windows.Forms.Label();
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
+            this.lblCode_joueur = new System.Windows.Forms.Label();
+            this.txtAjoutCode_joueur = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             // lblNomJoueur
             // 
             this.lblNomJoueur.AutoSize = true;
-            this.lblNomJoueur.Location = new System.Drawing.Point(332, 145);
+            this.lblNomJoueur.Location = new System.Drawing.Point(336, 198);
             this.lblNomJoueur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomJoueur.Name = "lblNomJoueur";
             this.lblNomJoueur.Size = new System.Drawing.Size(39, 16);
@@ -64,7 +66,7 @@
             // lblPrenomJoueur
             // 
             this.lblPrenomJoueur.AutoSize = true;
-            this.lblPrenomJoueur.Location = new System.Drawing.Point(335, 189);
+            this.lblPrenomJoueur.Location = new System.Drawing.Point(339, 242);
             this.lblPrenomJoueur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrenomJoueur.Name = "lblPrenomJoueur";
             this.lblPrenomJoueur.Size = new System.Drawing.Size(54, 16);
@@ -74,7 +76,7 @@
             // lblDateNaissanceJoueur
             // 
             this.lblDateNaissanceJoueur.AutoSize = true;
-            this.lblDateNaissanceJoueur.Location = new System.Drawing.Point(335, 237);
+            this.lblDateNaissanceJoueur.Location = new System.Drawing.Point(339, 290);
             this.lblDateNaissanceJoueur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDateNaissanceJoueur.Name = "lblDateNaissanceJoueur";
             this.lblDateNaissanceJoueur.Size = new System.Drawing.Size(120, 16);
@@ -84,7 +86,7 @@
             // lblPoids
             // 
             this.lblPoids.AutoSize = true;
-            this.lblPoids.Location = new System.Drawing.Point(335, 283);
+            this.lblPoids.Location = new System.Drawing.Point(339, 336);
             this.lblPoids.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPoids.Name = "lblPoids";
             this.lblPoids.Size = new System.Drawing.Size(71, 16);
@@ -94,7 +96,7 @@
             // lblTaille
             // 
             this.lblTaille.AutoSize = true;
-            this.lblTaille.Location = new System.Drawing.Point(335, 329);
+            this.lblTaille.Location = new System.Drawing.Point(339, 382);
             this.lblTaille.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTaille.Name = "lblTaille";
             this.lblTaille.Size = new System.Drawing.Size(44, 16);
@@ -104,7 +106,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(335, 380);
+            this.lblNumero.Location = new System.Drawing.Point(339, 433);
             this.lblNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(55, 16);
@@ -114,7 +116,7 @@
             // lblCote
             // 
             this.lblCote.AutoSize = true;
-            this.lblCote.Location = new System.Drawing.Point(332, 425);
+            this.lblCote.Location = new System.Drawing.Point(336, 478);
             this.lblCote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCote.Name = "lblCote";
             this.lblCote.Size = new System.Drawing.Size(78, 16);
@@ -134,40 +136,40 @@
             // 
             // txtNomJoueur
             // 
-            this.txtNomJoueur.Location = new System.Drawing.Point(488, 141);
-            this.txtNomJoueur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNomJoueur.Location = new System.Drawing.Point(492, 194);
+            this.txtNomJoueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomJoueur.Name = "txtNomJoueur";
             this.txtNomJoueur.Size = new System.Drawing.Size(188, 22);
             this.txtNomJoueur.TabIndex = 8;
             // 
             // txtPrenomJoueur
             // 
-            this.txtPrenomJoueur.Location = new System.Drawing.Point(488, 184);
-            this.txtPrenomJoueur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPrenomJoueur.Location = new System.Drawing.Point(492, 237);
+            this.txtPrenomJoueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrenomJoueur.Name = "txtPrenomJoueur";
             this.txtPrenomJoueur.Size = new System.Drawing.Size(188, 22);
             this.txtPrenomJoueur.TabIndex = 9;
             // 
             // txtPoids
             // 
-            this.txtPoids.Location = new System.Drawing.Point(488, 278);
-            this.txtPoids.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPoids.Location = new System.Drawing.Point(492, 331);
+            this.txtPoids.Margin = new System.Windows.Forms.Padding(4);
             this.txtPoids.Name = "txtPoids";
             this.txtPoids.Size = new System.Drawing.Size(188, 22);
             this.txtPoids.TabIndex = 10;
             // 
             // txtTaille
             // 
-            this.txtTaille.Location = new System.Drawing.Point(488, 326);
-            this.txtTaille.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTaille.Location = new System.Drawing.Point(492, 379);
+            this.txtTaille.Margin = new System.Windows.Forms.Padding(4);
             this.txtTaille.Name = "txtTaille";
             this.txtTaille.Size = new System.Drawing.Size(188, 22);
             this.txtTaille.TabIndex = 11;
             // 
             // numUpDownNumero
             // 
-            this.numUpDownNumero.Location = new System.Drawing.Point(488, 376);
-            this.numUpDownNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUpDownNumero.Location = new System.Drawing.Point(492, 429);
+            this.numUpDownNumero.Margin = new System.Windows.Forms.Padding(4);
             this.numUpDownNumero.Name = "numUpDownNumero";
             this.numUpDownNumero.Size = new System.Drawing.Size(189, 22);
             this.numUpDownNumero.TabIndex = 12;
@@ -178,16 +180,16 @@
             this.comboBoxCote.Items.AddRange(new object[] {
             "Droitier",
             "Gaucher"});
-            this.comboBoxCote.Location = new System.Drawing.Point(488, 420);
-            this.comboBoxCote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCote.Location = new System.Drawing.Point(492, 473);
+            this.comboBoxCote.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCote.Name = "comboBoxCote";
             this.comboBoxCote.Size = new System.Drawing.Size(188, 24);
             this.comboBoxCote.TabIndex = 13;
             // 
             // dtpDateNaissance
             // 
-            this.dtpDateNaissance.Location = new System.Drawing.Point(488, 232);
-            this.dtpDateNaissance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDateNaissance.Location = new System.Drawing.Point(492, 285);
+            this.dtpDateNaissance.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDateNaissance.Name = "dtpDateNaissance";
             this.dtpDateNaissance.Size = new System.Drawing.Size(188, 22);
             this.dtpDateNaissance.TabIndex = 14;
@@ -199,8 +201,8 @@
             // 
             // btnAjouterJoueur
             // 
-            this.btnAjouterJoueur.Location = new System.Drawing.Point(516, 520);
-            this.btnAjouterJoueur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAjouterJoueur.Location = new System.Drawing.Point(520, 573);
+            this.btnAjouterJoueur.Margin = new System.Windows.Forms.Padding(4);
             this.btnAjouterJoueur.Name = "btnAjouterJoueur";
             this.btnAjouterJoueur.Size = new System.Drawing.Size(143, 28);
             this.btnAjouterJoueur.TabIndex = 15;
@@ -211,7 +213,7 @@
             // lblPosition
             // 
             this.lblPosition.AutoSize = true;
-            this.lblPosition.Location = new System.Drawing.Point(332, 472);
+            this.lblPosition.Location = new System.Drawing.Point(336, 525);
             this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(55, 16);
@@ -225,17 +227,37 @@
             "Attaquant",
             "Défenseur",
             "Gardien"});
-            this.comboBoxPosition.Location = new System.Drawing.Point(488, 467);
-            this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxPosition.Location = new System.Drawing.Point(492, 520);
+            this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPosition.Name = "comboBoxPosition";
             this.comboBoxPosition.Size = new System.Drawing.Size(188, 24);
             this.comboBoxPosition.TabIndex = 17;
+            // 
+            // lblCode_joueur
+            // 
+            this.lblCode_joueur.AutoSize = true;
+            this.lblCode_joueur.Location = new System.Drawing.Point(336, 156);
+            this.lblCode_joueur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCode_joueur.Name = "lblCode_joueur";
+            this.lblCode_joueur.Size = new System.Drawing.Size(80, 16);
+            this.lblCode_joueur.TabIndex = 18;
+            this.lblCode_joueur.Text = "Code joueur";
+            // 
+            // txtAjoutCode_joueur
+            // 
+            this.txtAjoutCode_joueur.Location = new System.Drawing.Point(493, 156);
+            this.txtAjoutCode_joueur.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAjoutCode_joueur.Name = "txtAjoutCode_joueur";
+            this.txtAjoutCode_joueur.Size = new System.Drawing.Size(188, 22);
+            this.txtAjoutCode_joueur.TabIndex = 19;
             // 
             // FormAjouterJoueurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 639);
+            this.Controls.Add(this.txtAjoutCode_joueur);
+            this.Controls.Add(this.lblCode_joueur);
             this.Controls.Add(this.comboBoxPosition);
             this.Controls.Add(this.lblPosition);
             this.Controls.Add(this.btnAjouterJoueur);
@@ -254,7 +276,7 @@
             this.Controls.Add(this.lblDateNaissanceJoueur);
             this.Controls.Add(this.lblPrenomJoueur);
             this.Controls.Add(this.lblNomJoueur);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAjouterJoueurs";
             this.Text = "Ajouter des joueurs";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -286,5 +308,7 @@
         private System.Windows.Forms.Button btnAjouterJoueur;
         private System.Windows.Forms.ComboBox comboBoxPosition;
         private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.TextBox txtAjoutCode_joueur;
+        private System.Windows.Forms.Label lblCode_joueur;
     }
 }

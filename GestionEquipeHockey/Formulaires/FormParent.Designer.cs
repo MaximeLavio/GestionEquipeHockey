@@ -35,6 +35,9 @@
             this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierGardiensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierContratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.sauvegarderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,10 +106,35 @@
             // 
             // modifierToolStripMenuItem
             // 
+            this.modifierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modifierJoueursToolStripMenuItem,
+            this.modifierGardiensToolStripMenuItem,
+            this.modifierContratsToolStripMenuItem});
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             this.modifierToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
+            // 
+            // modifierJoueursToolStripMenuItem
+            // 
+            this.modifierJoueursToolStripMenuItem.Name = "modifierJoueursToolStripMenuItem";
+            this.modifierJoueursToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.modifierJoueursToolStripMenuItem.Text = "Modifier Joueurs";
+            this.modifierJoueursToolStripMenuItem.Click += new System.EventHandler(this.modifierJoueursToolStripMenuItem_Click);
+            // 
+            // modifierGardiensToolStripMenuItem
+            // 
+            this.modifierGardiensToolStripMenuItem.Name = "modifierGardiensToolStripMenuItem";
+            this.modifierGardiensToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.modifierGardiensToolStripMenuItem.Text = "Modifier Gardiens";
+            this.modifierGardiensToolStripMenuItem.Click += new System.EventHandler(this.modifierGardiensToolStripMenuItem_Click);
+            // 
+            // modifierContratsToolStripMenuItem
+            // 
+            this.modifierContratsToolStripMenuItem.Name = "modifierContratsToolStripMenuItem";
+            this.modifierContratsToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
+            this.modifierContratsToolStripMenuItem.Text = "Modifier Contrats";
+            this.modifierContratsToolStripMenuItem.Click += new System.EventHandler(this.modifierContratsToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
@@ -185,6 +213,7 @@
             this.sauvegarderToolStripMenuItem2.Name = "sauvegarderToolStripMenuItem2";
             this.sauvegarderToolStripMenuItem2.Size = new System.Drawing.Size(101, 24);
             this.sauvegarderToolStripMenuItem2.Text = "Sauvegarde";
+            this.sauvegarderToolStripMenuItem2.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem2_Click);
             // 
             // FormParent
             // 
@@ -196,9 +225,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormParent";
             this.Text = "Gestion de l\'équipe";
+            this.Load += new System.EventHandler(this.FormParent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -226,5 +256,8 @@
         private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem modifierJoueursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifierGardiensToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifierContratsToolStripMenuItem;
     }
 }

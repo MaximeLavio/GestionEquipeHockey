@@ -53,6 +53,18 @@
     <Compile Include="Classes\Interface1.cs" />
     <Compile Include="Classes\Joueurs.cs" />
     <Compile Include="Classes\Joueurs_avant.cs" />
+    <Compile Include="Formulaires\FormModifierContrats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormModifierContrats.Designer.cs">
+      <DependentUpon>FormModifierContrats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulaires\FormModifierGardiens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulaires\FormModifierGardiens.Designer.cs">
+      <DependentUpon>FormModifierGardiens.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulaires\FormAjouterContrats.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,11 +77,11 @@
     <Compile Include="Formulaires\FormAffichage.Designer.cs">
       <DependentUpon>FormAffichage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\FormModifier.cs">
+    <Compile Include="Formulaires\FormModifierJoueurs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\FormModifier.Designer.cs">
-      <DependentUpon>FormModifier.cs</DependentUpon>
+    <Compile Include="Formulaires\FormModifierJoueurs.Designer.cs">
+      <DependentUpon>FormModifierJoueurs.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\FormSupprimer.cs">
       <SubType>Form</SubType>
@@ -97,8 +109,14 @@
     <EmbeddedResource Include="Formulaires\FormAjouterJoueurs.resx">
       <DependentUpon>FormAjouterJoueurs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FormModifier.resx">
-      <DependentUpon>FormModifier.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\FormModifierContrats.resx">
+      <DependentUpon>FormModifierContrats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormModifierGardiens.resx">
+      <DependentUpon>FormModifierGardiens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulaires\FormModifierJoueurs.resx">
+      <DependentUpon>FormModifierJoueurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FormParent.resx">
       <DependentUpon>FormParent.cs</DependentUpon>

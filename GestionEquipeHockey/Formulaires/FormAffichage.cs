@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -47,10 +48,10 @@ namespace GestionEquipeHockey.Formulaires
             //la table Etudiants est la première table (indice 0) du DataSet DsScolarite. Si au //lieu d’utiliser une requête SQL on utilise une procédure stockée qui 
             // retourne plusieurs tables, ces tables seront dans le DataSet Ado.DsScolarite
             // et pour y accéder il suffit d’utiliser le bon indice : 0,1,2, etc. Dans notre //cas, la requête retourne une seule table. On met ce résultat dans la DataTable // DtEtudiant
-            Ado.DtJoueurs = Ado.DsGestionHockey.Tables[0];
+            Ado.DtGardiens = Ado.DsGestionHockey.Tables[0];
 
             //Afficher la table Ado.DtEtudiant dans notre dataGridView : il suffit d’associer //la table obtenue Ado.DtEtudiant au DataSource de notre dataGridView
-            this.dataGridView1.DataSource = Ado.DtJoueurs;
+            this.dataGridView1.DataSource = Ado.DtGardiens;
             //this.datagridview.headercolumn kek choses pour changer titre colomn
 
 
@@ -73,7 +74,7 @@ namespace GestionEquipeHockey.Formulaires
             {
                 foreach (Gardiens_but joueur in Classe_statique.listGardiens)
                 {
-                    DataRow UnJoueur = Ado.DtJoueurs.NewRow(); 
+                    DataRow UnJoueur = Ado.DtGardiens.NewRow(); 
 
                     UnJoueur[1] = joueur.Nom_Joueur;
                     UnJoueur[2] = joueur.Prenom_Joueur;
@@ -92,7 +93,7 @@ namespace GestionEquipeHockey.Formulaires
                     UnJoueur[15] = joueur.Nb_Tire_Recus;
                     
 
-                    Ado.DtJoueurs.Rows.Add(UnJoueur);
+                    Ado.DtGardiens.Rows.Add(UnJoueur);
                 }               
             }
             catch (Exception ex)
@@ -149,6 +150,7 @@ namespace GestionEquipeHockey.Formulaires
                 {
                     DataRow UnJoueur = Ado.DtJoueurs.NewRow();
 
+                    UnJoueur[0] = joueur.Code_Joueur;
                     UnJoueur[1] = joueur.Nom_Joueur;
                     UnJoueur[2] = joueur.Prenom_Joueur;
                     UnJoueur[3] = joueur.Date_naissance;
@@ -176,11 +178,66 @@ namespace GestionEquipeHockey.Formulaires
 
 
 
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnSauvegarderGardiens_Click(object sender, EventArgs e)
+        {
+            //Gestion d'exception dans le cas où il y a problème avec le serveur
+            try
+            {
+                // SqlCommandBuilder est la classe qui me permet de sauvegarder       // dans une Base de données.
+                //Son constructeur prend en paramètres le data adapter Adapter. 
+                SqlCommandBuilder builder = new SqlCommandBuilder(Ado.Adapter);
+                //Appeler la méthode Update de l’adapteur.
+                //Elle prend en paramètres le DataSet, et le nom de la table.	
+                Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtGardiens.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSauvegarderJoueurs_Click(object sender, EventArgs e)
+        {
+            //Gestion d'exception dans le cas où il y a problème avec le serveur
+            try
+            {
+                // SqlCommandBuilder est la classe qui me permet de sauvegarder       // dans une Base de données.
+                //Son constructeur prend en paramètres le data adapter Adapter. 
+                SqlCommandBuilder builder = new SqlCommandBuilder(Ado.Adapter);
+                //Appeler la méthode Update de l’adapteur.
+                //Elle prend en paramètres le DataSet, et le nom de la table.	
+                Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtJoueurs.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnActualiser_Click(object sender, EventArgs e)
+        {
+            foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
+            {
+                //Parcourir les lignes de la table Ado.DtEtudiants
+                foreach (DataRow row in Ado.DtJoueurs.Rows)
+                {
+                    //Apporter toutes les modifications sur tous les champs de la ligne
+                    row[0] = joueur.Code_Joueur;
+                    row[1] = joueur.Nom_Joueur;
+                    row[2] = joueur.Prenom_Joueur;
+                    row[3] = joueur.Date_naissance;
+
+                }
+            }
+
+           
 
         }
     }
