@@ -78,9 +78,20 @@ namespace GestionEquipeHockey.Formulaires
                 valid = false;
             }
 
-            // Vérifier si le poids et la taille du joueur sont de type float
+            // Vérifier le poids et la taille du joueur
             // Sinon Message d'erreur
-            
+            Regex regex_poids_taille = new Regex("^[0-9]{1,5}$");
+            bool re_poids = regex_poids_taille.IsMatch(txtPoids.Text);
+            bool re_taille = regex_poids_taille.IsMatch(txtTaille.Text);
+            if (re_poids && re_taille)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez entrer le poids et la taille correctement", "Error");
+                valid = false;
+            }
 
 
             // Vérifier si le Numéro du joueur est entre 0 et 99 
@@ -126,7 +137,29 @@ namespace GestionEquipeHockey.Formulaires
             {
                 if (VérificationChamps())
                 {
-                    
+                    /*Gardiens_but obj = null;
+                    foreach (Gardiens_but gr in Classe_statique.listGardiens)
+                    {
+                        if (gr.Code_Joueur == txtAjoutCode_joueur.Text)
+                        {
+                            MessageBox.Show("Le joueur existe déja", "Error");
+                            obj = gr;
+                        }
+                    }
+                    if (obj == null)
+                    {
+                        Gardiens_but gardien = new Gardiens_but();
+                        gardien.Code_Joueur = txtAjoutCode_joueur.Text;
+                        gardien.Nom_Joueur = txtNomJoueur.Text;
+                        gardien.Prenom_Joueur = txtPrenomJoueur.Text;
+                        gardien.Date_naissance = dtpDateNaissance.Value;
+                        gardien.Poids = float.Parse(txtPoids.Text);
+                        gardien.Taille = float.Parse(txtTaille.Text);
+                        gardien.Numero = Convert.ToInt16(numUpDownNumero.Value);
+                        gardien.Cote = comboBoxCote.Text;
+                        Classe_statique.listGardiens.Add(gardien);
+                        ClearChamps();
+                    }*/
                     Gardiens_but gardien = new Gardiens_but();
                     gardien.Code_Joueur = txtAjoutCode_joueur.Text;
                     gardien.Nom_Joueur = txtNomJoueur.Text;
@@ -138,7 +171,7 @@ namespace GestionEquipeHockey.Formulaires
                     gardien.Cote = comboBoxCote.Text;
                     Classe_statique.listGardiens.Add(gardien);
                     ClearChamps();
-                    
+
                 }
                 
             }

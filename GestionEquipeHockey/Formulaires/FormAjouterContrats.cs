@@ -98,6 +98,34 @@ namespace GestionEquipeHockey.Formulaires
                 MessageBox.Show("Le numéro du contrat doit être de 10 caractères.", "Error");
                 valid = false;
             }
+
+            // Vérifier la date de début et de fin 
+            // Sinon message erreur
+            if (Classe_statique.Dure(dtpDebutContrat.Value, dtpFinContrat.Value) > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("La date de début doit être inférieur à celle de fin.", "Error");
+                valid = false;
+            }
+
+            // Vérifier que le montant annuel est un nombre
+            // Sinon Message d'erreur
+            Regex regex_montant = new Regex("^[0-9]{1,20}$");
+            bool re_montant = regex_montant.IsMatch(txtMontantAnnuel.Text);
+            if (re_montant)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez saisir un nombre pour le montant.", "Error");
+                valid = false;
+            }
+
+            // Après vérification 
             if (valid)
             {
                 return true;

@@ -92,8 +92,20 @@ namespace GestionEquipeHockey.Formulaires
                 valid = false;
             }
 
-            // Vérifier si le poids et la taille du joueur sont de type float
+            // Vérifier le poids et la taille du joueur
             // Sinon Message d'erreur
+            Regex regex_poids_taille = new Regex("^[0-9]*$");
+            bool re_poids = regex_poids_taille.IsMatch(txtPoids.Text);
+            bool re_taille = regex_poids_taille.IsMatch(txtTaille.Text);
+            if (re_poids && re_taille)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez entrer le poids et la taille correctement", "Error");
+                valid = false;
+            }
 
 
 
@@ -123,6 +135,26 @@ namespace GestionEquipeHockey.Formulaires
                 valid = false;
             }
 
+            // Vérifier que les statistiques sont des nombres
+            // Sinon Message d'erreur
+            Regex regex_stats = new Regex("^[0-9]{1,5}$");
+            bool re_matchs = regex_stats.IsMatch(txtNb_matchs.Text);
+            bool re_punitions = regex_stats.IsMatch(txtMinutes_punitions.Text);
+            bool re_arrets = regex_stats.IsMatch(txtNb_arrets.Text);
+            bool re_tires_recus = regex_stats.IsMatch(txtTires_recus.Text);
+
+
+            if (re_matchs && re_punitions && re_arrets && re_tires_recus)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Les statistiques du joueur doivent être des nombres.", "Error");
+                valid = false;
+            }
+
+            // Après vérification
             if (valid)
             {
                 return true;
