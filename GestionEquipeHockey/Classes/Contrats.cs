@@ -9,6 +9,7 @@ namespace GestionEquipeHockey.Classes
     public class Contrats : IContrat
     {
         // Attributs de la class Contrats
+        private string code_joueur;     // Code du joueur
         private string num_contrat;     // Numéro du contrat
         private DateTime date_debut;    // Date du début du contrat
         private DateTime date_fin;      // Date de fin du contrat
@@ -16,6 +17,11 @@ namespace GestionEquipeHockey.Classes
         private static int nb_contrats; // Nombre de contrats créer
 
         // Propriétés Get/Set des attributs 
+        public string Code_Joueur
+        {
+            get { return code_joueur; }
+            set { code_joueur = value; }
+        }
         public string Num_Contrat
         {
             get { return num_contrat; }
@@ -48,9 +54,10 @@ namespace GestionEquipeHockey.Classes
 
 
         // Constructeur de la class Joueurs_avant
-        public Contrats(string p_num_contrat = "", DateTime p_date_debut = default, DateTime p_date_fin = default, float p_montant_annuel = 0)
+        public Contrats(string p_code_joueur = "",string p_num_contrat = "", DateTime p_date_debut = default, DateTime p_date_fin = default, float p_montant_annuel = 0)
         {
             nb_contrats++;
+            this.code_joueur = p_code_joueur;
             this.num_contrat = p_num_contrat;
             this.date_debut = p_date_debut;
             this.date_fin = p_date_fin;

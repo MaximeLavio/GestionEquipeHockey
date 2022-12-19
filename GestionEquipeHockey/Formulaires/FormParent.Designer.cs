@@ -31,25 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormParent));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifierJoueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifierGardiensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifierContratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sauvegarderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.afficherInformationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.sauvegarderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.joueursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.gardiensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.contratsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.sauvegarderToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +50,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionToolStripMenuItem,
-            this.affichageToolStripMenuItem,
-            this.sauvegarderToolStripMenuItem2});
+            this.affichageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1604, 28);
@@ -69,151 +60,88 @@
             // gestionToolStripMenuItem
             // 
             this.gestionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ajouterToolStripMenuItem,
-            this.modifierToolStripMenuItem,
-            this.supprimerToolStripMenuItem,
+            this.joueursToolStripMenuItem,
+            this.contratsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.sauvegarderToolStripMenuItem,
-            this.toolStripSeparator2,
             this.quitterToolStripMenuItem});
             this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.gestionToolStripMenuItem.Text = "Gestion";
-            // 
-            // ajouterToolStripMenuItem
-            // 
-            this.ajouterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.joueursToolStripMenuItem,
-            this.contratsToolStripMenuItem});
-            this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.ajouterToolStripMenuItem.Text = "Ajouter";
-            this.ajouterToolStripMenuItem.Click += new System.EventHandler(this.ajouterToolStripMenuItem_Click);
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.gestionToolStripMenuItem.Text = "Ajouter";
             // 
             // joueursToolStripMenuItem
             // 
             this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.joueursToolStripMenuItem.Text = "Joueurs";
             this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
             // 
             // contratsToolStripMenuItem
             // 
             this.contratsToolStripMenuItem.Name = "contratsToolStripMenuItem";
-            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.contratsToolStripMenuItem.Text = "Contrats";
             this.contratsToolStripMenuItem.Click += new System.EventHandler(this.contratsToolStripMenuItem_Click);
-            // 
-            // modifierToolStripMenuItem
-            // 
-            this.modifierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modifierJoueursToolStripMenuItem,
-            this.modifierGardiensToolStripMenuItem,
-            this.modifierContratsToolStripMenuItem});
-            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.modifierToolStripMenuItem.Text = "Modifier";
-            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
-            // 
-            // modifierJoueursToolStripMenuItem
-            // 
-            this.modifierJoueursToolStripMenuItem.Name = "modifierJoueursToolStripMenuItem";
-            this.modifierJoueursToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.modifierJoueursToolStripMenuItem.Text = "Modifier Joueurs";
-            this.modifierJoueursToolStripMenuItem.Click += new System.EventHandler(this.modifierJoueursToolStripMenuItem_Click);
-            // 
-            // modifierGardiensToolStripMenuItem
-            // 
-            this.modifierGardiensToolStripMenuItem.Name = "modifierGardiensToolStripMenuItem";
-            this.modifierGardiensToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.modifierGardiensToolStripMenuItem.Text = "Modifier Gardiens";
-            this.modifierGardiensToolStripMenuItem.Click += new System.EventHandler(this.modifierGardiensToolStripMenuItem_Click);
-            // 
-            // modifierContratsToolStripMenuItem
-            // 
-            this.modifierContratsToolStripMenuItem.Name = "modifierContratsToolStripMenuItem";
-            this.modifierContratsToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
-            this.modifierContratsToolStripMenuItem.Text = "Modifier Contrats";
-            this.modifierContratsToolStripMenuItem.Click += new System.EventHandler(this.modifierContratsToolStripMenuItem_Click);
-            // 
-            // supprimerToolStripMenuItem
-            // 
-            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.supprimerToolStripMenuItem.Text = "Supprimer";
-            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
-            // 
-            // sauvegarderToolStripMenuItem
-            // 
-            this.sauvegarderToolStripMenuItem.Name = "sauvegarderToolStripMenuItem";
-            this.sauvegarderToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.sauvegarderToolStripMenuItem.Text = "Sauvegarde";
-            this.sauvegarderToolStripMenuItem.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.quitterToolStripMenuItem.Text = "Quitter";
-            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // affichageToolStripMenuItem
             // 
             this.affichageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.afficherInformationsToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.sauvegarderToolStripMenuItem1,
+            this.joueursToolStripMenuItem1,
+            this.gardiensToolStripMenuItem,
             this.toolStripSeparator4,
+            this.contratsToolStripMenuItem1,
+            this.toolStripSeparator3,
             this.quitterToolStripMenuItem1});
             this.affichageToolStripMenuItem.Name = "affichageToolStripMenuItem";
             this.affichageToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.affichageToolStripMenuItem.Text = "Affichage";
             // 
-            // afficherInformationsToolStripMenuItem
+            // joueursToolStripMenuItem1
             // 
-            this.afficherInformationsToolStripMenuItem.Name = "afficherInformationsToolStripMenuItem";
-            this.afficherInformationsToolStripMenuItem.Size = new System.Drawing.Size(232, 26);
-            this.afficherInformationsToolStripMenuItem.Text = "Afficher informations";
-            this.afficherInformationsToolStripMenuItem.Click += new System.EventHandler(this.afficherInformationsToolStripMenuItem_Click);
+            this.joueursToolStripMenuItem1.Name = "joueursToolStripMenuItem1";
+            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.joueursToolStripMenuItem1.Text = "Joueurs";
+            this.joueursToolStripMenuItem1.Click += new System.EventHandler(this.joueursToolStripMenuItem1_Click);
             // 
-            // toolStripSeparator3
+            // gardiensToolStripMenuItem
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(229, 6);
-            // 
-            // sauvegarderToolStripMenuItem1
-            // 
-            this.sauvegarderToolStripMenuItem1.Name = "sauvegarderToolStripMenuItem1";
-            this.sauvegarderToolStripMenuItem1.Size = new System.Drawing.Size(232, 26);
-            this.sauvegarderToolStripMenuItem1.Text = "Sauvegarde";
+            this.gardiensToolStripMenuItem.Name = "gardiensToolStripMenuItem";
+            this.gardiensToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gardiensToolStripMenuItem.Text = "Gardiens";
+            this.gardiensToolStripMenuItem.Click += new System.EventHandler(this.gardiensToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(229, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
+            // 
+            // contratsToolStripMenuItem1
+            // 
+            this.contratsToolStripMenuItem1.Name = "contratsToolStripMenuItem1";
+            this.contratsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.contratsToolStripMenuItem1.Text = "Contrats";
+            this.contratsToolStripMenuItem1.Click += new System.EventHandler(this.contratsToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(221, 6);
             // 
             // quitterToolStripMenuItem1
             // 
             this.quitterToolStripMenuItem1.Name = "quitterToolStripMenuItem1";
-            this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(232, 26);
+            this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.quitterToolStripMenuItem1.Text = "Quitter";
-            // 
-            // sauvegarderToolStripMenuItem2
-            // 
-            this.sauvegarderToolStripMenuItem2.Name = "sauvegarderToolStripMenuItem2";
-            this.sauvegarderToolStripMenuItem2.Size = new System.Drawing.Size(101, 24);
-            this.sauvegarderToolStripMenuItem2.Text = "Sauvegarde";
-            this.sauvegarderToolStripMenuItem2.Click += new System.EventHandler(this.sauvegarderToolStripMenuItem2_Click);
             // 
             // FormParent
             // 
@@ -228,7 +156,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormParent";
             this.Text = "Gestion de l\'équipe";
-            this.Load += new System.EventHandler(this.FormParent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -240,24 +167,16 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajouterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem supprimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem affichageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem afficherInformationsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem joueursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contratsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem sauvegarderToolStripMenuItem2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modifierJoueursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifierGardiensToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modifierContratsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem joueursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contratsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem joueursToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem gardiensToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contratsToolStripMenuItem1;
     }
 }

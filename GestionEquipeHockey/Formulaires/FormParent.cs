@@ -18,35 +18,6 @@ namespace GestionEquipeHockey.Formulaires
             InitializeComponent();
         }
 
-        private void ajouterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formulaires.FormSupprimer f = new Formulaires.FormSupprimer();
-            f.MdiParent = this;
-            f.Show();
-        }
-
-        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-        private void afficherInformationsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formulaires.FormAffichage f = new Formulaires.FormAffichage();
-            f.MdiParent = this;
-            f.Show();
-        }
-
         private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formulaires.FormAjouterJoueurs f = new Formulaires.FormAjouterJoueurs();
@@ -61,40 +32,25 @@ namespace GestionEquipeHockey.Formulaires
             f.Show();
         }
 
-        private void sauvegarderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void contratsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void modifierJoueursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formulaires.FormModifierJoueurs f = new Formulaires.FormModifierJoueurs();
+            Formulaires.FormAfficherContrats f = new Formulaires.FormAfficherContrats();
             f.MdiParent = this;
             f.Show();
         }
 
-        private void modifierGardiensToolStripMenuItem_Click(object sender, EventArgs e)
+        private void joueursToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Formulaires.FormModifierGardiens f = new Formulaires.FormModifierGardiens();
+            Formulaires.FormAfficherJoueurs f = new Formulaires.FormAfficherJoueurs();
             f.MdiParent = this;
             f.Show();
         }
 
-        private void modifierContratsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gardiensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Formulaires.FormModifierContrats f = new Formulaires.FormModifierContrats();
+            Formulaires.FormAfficherGardiens f = new Formulaires.FormAfficherGardiens();
             f.MdiParent = this;
             f.Show();
-        }
-
-        private void sauvegarderToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void FormParent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

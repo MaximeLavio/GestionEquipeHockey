@@ -280,6 +280,7 @@
             this.Name = "FormAjouterJoueurs";
             this.Text = "Ajouter des joueurs";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormAjouterJoueurs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);

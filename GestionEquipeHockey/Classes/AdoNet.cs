@@ -18,6 +18,7 @@ namespace GestionEquipeHockey.Classes
         private DataTable dtJoueurs;
         private DataSet dsGestionHockey;
         private DataTable dtGardiens;
+        private DataTable dtContrats;
 
 
         // Propriétés 
@@ -28,6 +29,7 @@ namespace GestionEquipeHockey.Classes
         public DataTable DtJoueurs { get => dtJoueurs; set => dtJoueurs = value; }
         public DataSet DsGestionHockey { get => dsGestionHockey; set => dsGestionHockey = value; }
         public DataTable DtGardiens{ get => dtGardiens; set => dtGardiens = value; }
+        public DataTable DtContrats { get => dtContrats; set => dtContrats = value; }
 
         //Constructeur
         public AdoNet()
@@ -39,6 +41,7 @@ namespace GestionEquipeHockey.Classes
             dsGestionHockey = new DataSet();
             dtJoueurs = new DataTable();
             dtGardiens = new DataTable();
+            dtContrats = new DataTable();
         }
 
 

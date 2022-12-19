@@ -22,5 +22,7 @@ namespace GestionEquipeHockey.Classes
 
         public static List<Joueurs_avant> listJoueurs = new List<Joueurs_avant>();
 
+        public static List<Contrats> listContrats = new List<Contrats>();
+
     }
 }

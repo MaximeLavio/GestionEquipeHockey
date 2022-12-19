@@ -163,5 +163,10 @@ namespace GestionEquipeHockey.Formulaires
             
 
         }
+
+        private void FormAjouterJoueurs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

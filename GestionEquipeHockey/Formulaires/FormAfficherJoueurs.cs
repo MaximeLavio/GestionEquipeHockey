@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ using GestionEquipeHockey.Classes;
 
 namespace GestionEquipeHockey.Formulaires
 {
-    public partial class FormModifierJoueurs : Form
+    public partial class FormAfficherJoueurs : Form
     {
-        public FormModifierJoueurs()
+        AdoNet Ado;
+        public FormAfficherJoueurs()
         {
             InitializeComponent();
         }
@@ -54,6 +56,14 @@ namespace GestionEquipeHockey.Formulaires
 
         public void Modifsupprimer(string numero)
         {
+
+            //Parcourir les lignes de la table
+            foreach (DataRow row in Ado.DtJoueurs.Rows)
+            {
+                //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
+                if (row[0].ToString().Equals(numero))
+                    row.Delete();
+            }
             Joueurs_avant obj = null;
             foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
             {
@@ -150,6 +160,7 @@ namespace GestionEquipeHockey.Formulaires
                 {
                     obj = joueur;
                     btnModifier.Enabled = true;
+                    btnSupprimer.Enabled = true;
                 }
             }
             if (obj == null)
@@ -193,36 +204,95 @@ namespace GestionEquipeHockey.Formulaires
         private void FormModifierJoueurs_Load(object sender, EventArgs e)
         {
             btnModifier.Enabled = false;
+            btnSupprimer.Enabled = false;
+
+
+
+
+            //Instancier un objet Ado qui sera utilisé pour se connecter à la base de données //et y accéder
+            Ado = new AdoNet();
+
+            //Écriture de la requête Sql qui va être utilisé dans l’objet Command
+            string newQuery = "Select * from Joueurs_avant;";
+
+            //Préparer l'objet Command en mettant dans la CommandText la chaîne Query préparée 
+            Ado.Command.CommandText = newQuery;
+
+            //Mettre dans la propriété Connection de l’objet Command l’objet Connection qu’on a //préparé (instancié)
+            Ado.Command.Connection = Ado.Connection;
+
+            //Préparer l'objet Adapter qui sert d’intermédiaire entre la source de données et le DataSet. SelectCommand est utilisée car notre commande est une commande //Select
+            Ado.Adapter.SelectCommand = Ado.Command;
+
+            //Remplir le DataSet Ado.DsScolarite avec le résultat de la requête Query (Dans ce //cas le résultat est la table Etudiants). Pour cela il faut utiliser la méthode //Fill
+            Ado.Adapter.Fill(Ado.DsGestionHockey);
+
+            //la table Etudiants est la première table (indice 0) du DataSet DsScolarite. Si au //lieu d’utiliser une requête SQL on utilise une procédure stockée qui 
+            // retourne plusieurs tables, ces tables seront dans le DataSet Ado.DsScolarite
+            // et pour y accéder il suffit d’utiliser le bon indice : 0,1,2, etc. Dans notre //cas, la requête retourne une seule table. On met ce résultat dans la DataTable // DtEtudiant
+            Ado.DtJoueurs = Ado.DsGestionHockey.Tables[0];
+
+            //Afficher la table Ado.DtEtudiant dans notre dataGridView : il suffit d’associer //la table obtenue Ado.DtEtudiant au DataSource de notre dataGridView
+            this.dataGridView2.DataSource = Ado.DtJoueurs;
+            //this.datagridview.headercolumn kek choses pour changer titre colomn
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Mettre les valeurs entrées par l'utilisateur dans l'objet DataRow UnEtudiant
+            try
+            {
+                foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
+                {
+                    DataRow UnJoueur = Ado.DtJoueurs.NewRow();
+
+                    UnJoueur[0] = joueur.Code_Joueur;
+                    UnJoueur[1] = joueur.Nom_Joueur;
+                    UnJoueur[2] = joueur.Prenom_Joueur;
+                    UnJoueur[3] = joueur.Date_naissance;
+                    UnJoueur[4] = joueur.Poids;
+                    UnJoueur[5] = joueur.Taille;
+                    UnJoueur[6] = joueur.Numero;
+                    UnJoueur[7] = joueur.Cote;
+                    UnJoueur[8] = joueur.Nom_Equipe;
+                    UnJoueur[9] = joueur.Ville_Equipe;
+                    UnJoueur[10] = joueur.Arena_Equipe;
+                    UnJoueur[11] = joueur.Pays_Equipe;
+                    UnJoueur[12] = joueur.Nb_Matchs;
+                    UnJoueur[13] = joueur.Minutes_Punition;
+                    UnJoueur[14] = joueur.Nb_Buts;
+                    UnJoueur[15] = joueur.Nb_Passes;
+                    UnJoueur[16] = joueur.Nb_Mises_Echec;
+
+                    Ado.DtJoueurs.Rows.Add(UnJoueur);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            if (comboBoxPosition.Text == "Gardien")
+          
+            if (comboBoxPosition.Text == "Attaquant" || comboBoxPosition.Text == "Défenseur")
             {
                 if (VérificationChampsModif())
                 {
-                   
-
-                    Gardiens_but gardien = new Gardiens_but();
-                    gardien.Code_Joueur = txtCode_joueur.Text;
-                    gardien.Nom_Joueur = txtNomJoueur.Text;
-                    gardien.Prenom_Joueur = txtPrenomJoueur.Text;
-                    gardien.Date_naissance = dtpDateNaissance.Value;
-                    gardien.Poids = float.Parse(txtPoids.Text);
-                    gardien.Taille = float.Parse(txtTaille.Text);
-                    gardien.Numero = Convert.ToInt16(numUpDownNumero.Value);
-                    gardien.Cote = comboBoxCote.Text;
-                    Classe_statique.listGardiens.Add(gardien);
-                    ClearChamps();
-
-                }
-
-            }
-            else if (comboBoxPosition.Text == "Attaquant" || comboBoxPosition.Text == "Défenseur")
-            {
-                if (VérificationChampsModif())
-                {
-                    Modifsupprimer(txtCode_joueur.Text);
+                    Modifsupprimer(txtCode_joueur.Text.Trim());
 
                     Joueurs_avant joueur = new Joueurs_avant();
                     joueur.Code_Joueur = txtCode_joueur.Text;
@@ -243,6 +313,65 @@ namespace GestionEquipeHockey.Formulaires
                 }
 
             }
+        }
+
+        private void btnSauvegarderJoueurs_Click(object sender, EventArgs e)
+        {
+            //Gestion d'exception dans le cas où il y a problème avec le serveur
+            try
+            {
+                // SqlCommandBuilder est la classe qui me permet de sauvegarder       // dans une Base de données.
+                //Son constructeur prend en paramètres le data adapter Adapter. 
+                SqlCommandBuilder builder = new SqlCommandBuilder(Ado.Adapter);
+                //Appeler la méthode Update de l’adapteur.
+                //Elle prend en paramètres le DataSet, et le nom de la table.	
+                Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtJoueurs.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Parcourir les lignes de la table
+                foreach (DataRow row in Ado.DtJoueurs.Rows)
+                {
+                    try
+                    {
+                        //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
+                        if (row[0].ToString().Equals(txtCode_joueur.Text.Trim()))
+                            row.Delete();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Veuillez dabord sauvegarder les modifications!", "Error");
+                    }
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Veuillez dabord sauvegarder les modifications!", "Error");
+            }
+            Joueurs_avant obj = null;
+            foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
+            {
+                if (joueur.Code_Joueur == txtCode_joueur.Text);
+                {
+                    obj = joueur;
+                }
+            }
+            Classe_statique.listJoueurs.Remove(obj);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

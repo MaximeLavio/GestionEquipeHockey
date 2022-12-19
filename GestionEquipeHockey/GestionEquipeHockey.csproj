@@ -53,17 +53,17 @@
     <Compile Include="Classes\Interface1.cs" />
     <Compile Include="Classes\Joueurs.cs" />
     <Compile Include="Classes\Joueurs_avant.cs" />
-    <Compile Include="Formulaires\FormModifierContrats.cs">
+    <Compile Include="Formulaires\FormAfficherContrats.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\FormModifierContrats.Designer.cs">
-      <DependentUpon>FormModifierContrats.cs</DependentUpon>
+    <Compile Include="Formulaires\FormAfficherContrats.Designer.cs">
+      <DependentUpon>FormAfficherContrats.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\FormModifierGardiens.cs">
+    <Compile Include="Formulaires\FormAfficherGardiens.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\FormModifierGardiens.Designer.cs">
-      <DependentUpon>FormModifierGardiens.cs</DependentUpon>
+    <Compile Include="Formulaires\FormAfficherGardiens.Designer.cs">
+      <DependentUpon>FormAfficherGardiens.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\FormAjouterContrats.cs">
       <SubType>Form</SubType>
@@ -71,23 +71,11 @@
     <Compile Include="Formulaires\FormAjouterContrats.Designer.cs">
       <DependentUpon>FormAjouterContrats.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulaires\FormAffichage.cs">
+    <Compile Include="Formulaires\FormAfficherJoueurs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulaires\FormAffichage.Designer.cs">
-      <DependentUpon>FormAffichage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulaires\FormModifierJoueurs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulaires\FormModifierJoueurs.Designer.cs">
-      <DependentUpon>FormModifierJoueurs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formulaires\FormSupprimer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulaires\FormSupprimer.Designer.cs">
-      <DependentUpon>FormSupprimer.cs</DependentUpon>
+    <Compile Include="Formulaires\FormAfficherJoueurs.Designer.cs">
+      <DependentUpon>FormAfficherJoueurs.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulaires\FormAjouterJoueurs.cs">
       <SubType>Form</SubType>
@@ -109,23 +97,17 @@
     <EmbeddedResource Include="Formulaires\FormAjouterJoueurs.resx">
       <DependentUpon>FormAjouterJoueurs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FormModifierContrats.resx">
-      <DependentUpon>FormModifierContrats.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\FormAfficherContrats.resx">
+      <DependentUpon>FormAfficherContrats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FormModifierGardiens.resx">
-      <DependentUpon>FormModifierGardiens.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\FormAfficherGardiens.resx">
+      <DependentUpon>FormAfficherGardiens.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FormModifierJoueurs.resx">
-      <DependentUpon>FormModifierJoueurs.cs</DependentUpon>
+    <EmbeddedResource Include="Formulaires\FormAfficherJoueurs.resx">
+      <DependentUpon>FormAfficherJoueurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulaires\FormParent.resx">
       <DependentUpon>FormParent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FormSupprimer.resx">
-      <DependentUpon>FormSupprimer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulaires\FormAffichage.resx">
-      <DependentUpon>FormAffichage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
