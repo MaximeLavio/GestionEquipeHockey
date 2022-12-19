@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionEquipeHockey.Classes
 {
+    /// <summary>
+    /// Interface IContrat
+    /// </summary>
     interface IContrat
     {
         float Montant_total();

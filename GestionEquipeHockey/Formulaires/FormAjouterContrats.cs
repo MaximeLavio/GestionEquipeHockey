@@ -19,6 +19,9 @@ namespace GestionEquipeHockey.Formulaires
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Méthode pour réinitialiser les champs des formulaires
+        /// </summary>
         public void ClearChamps()
         {
             txtNumContrat.Text = "";
@@ -28,6 +31,11 @@ namespace GestionEquipeHockey.Formulaires
         }
 
 
+
+        /// <summary>
+        /// Méthode qui sert à confirmer si le code du joueur existe et fait partit de l'équipe
+        /// </summary>
+        /// <param name="code"></param>
         public void VerifCode(string code)
         {
             Gardiens_but obj = null;
@@ -56,6 +64,11 @@ namespace GestionEquipeHockey.Formulaires
 
 
 
+        /// <summary>
+        /// Bouton qui confirme la gestion d'erreur pour le code du joueur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnContinuer_Click(object sender, EventArgs e)
         {
             // Vérifier si le code du joueur est chiffre de longeur 5
@@ -72,14 +85,24 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+
+        /// <summary>
+        /// Méthode qui se réalise au chargement du formulaire.
+        /// Empêche d'utiliser certains boutons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormAjouterContrats_Load(object sender, EventArgs e)
         {
             btnConfirmerContrat.Enabled = false;
-
-
-
         }
 
+
+        /// <summary>
+        /// Méthode qui fait la gestion d'erreurs à l'aide de Regex pour les champs où
+        /// l'utilisateur doit entrer des données
+        /// </summary>
+        /// <returns></returns>
         public bool VérificationChamps()
         {
             bool valid = true;
@@ -137,6 +160,12 @@ namespace GestionEquipeHockey.Formulaires
         }
 
 
+        /// <summary>
+        /// Bouton qui créer un objet contrat une fois tout les demandes et gestions d'erreur fait. 
+        /// Ajoute également l'objet à la liste
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConfirmerContrat_Click(object sender, EventArgs e)
         {
             if (VérificationChamps())
@@ -149,10 +178,7 @@ namespace GestionEquipeHockey.Formulaires
                 contrat.Code_Joueur = txtCode_joueur.Text;
                 Classe_statique.listContrats.Add(contrat);
                 ClearChamps();
-            }
-
-
-            
+            }  
         }
     }
 }

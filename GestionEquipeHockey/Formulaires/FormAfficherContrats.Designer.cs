@@ -280,7 +280,6 @@
             this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 84;
             this.label3.Text = "Contrats";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtRecherche
             // 

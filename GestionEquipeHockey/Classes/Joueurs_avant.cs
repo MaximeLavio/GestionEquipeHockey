@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace GestionEquipeHockey.Classes
 {
+    /// <summary>
+    /// Classe qui crée des objets Joueurs_avant(joueurs qui ne sont pas des gardiens).
+    /// Cette classe enfant hérite de la classe parents Joueurs
+    /// </summary>
     public class Joueurs_avant : Joueurs
     {
         // Attributs de la classe Joueurs_avant
@@ -60,7 +64,7 @@ namespace GestionEquipeHockey.Classes
         }
 
         /// <summary>
-        /// Méthode qui calcule l'éfficacité du joueur 
+        /// Méthode qui calcule l'éfficacité du joueur selon le nombre de buts et le nombre de passes 
         /// </summary>
         /// <returns>Le nombre de but en moyenne par match</returns>
         public override int Calculer_Efficacite()

@@ -20,7 +20,10 @@ namespace GestionEquipeHockey.Formulaires
         {
             InitializeComponent();
         }
-
+        
+        /// <summary>
+        /// Méthode qui sert à effacé les champs, réinitialiser les champs 
+        /// </summary>
         public void ClearChamps()
         {
             txtNumContrat.Text = "";
@@ -29,16 +32,16 @@ namespace GestionEquipeHockey.Formulaires
             txtMontantAnnuel.Text = "";
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Méthode qui se déroule au chargement du formulaire.
+        /// Sert à afficher les objets contrats dans un datagridView au chargement du formulaire
+        /// Code tiré des notes de cours et exercices sur Léa (En mode déconnecter)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormAfficherContrats_Load(object sender, EventArgs e)
         {
             panel1.Hide();
-
-
 
             //Instancier un objet Ado qui sera utilisé pour se connecter à la base de données //et y accéder
             Ado = new AdoNet();
@@ -87,9 +90,14 @@ namespace GestionEquipeHockey.Formulaires
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
+
+        /// <summary>
+        /// Bouton qui sert à sauvegarder les modifications apporter au datagridview dans la base de donnée.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSauvegarderContrat_Click(object sender, EventArgs e)
         {
             //Gestion d'exception dans le cas où il y a problème avec le serveur
@@ -108,6 +116,13 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+
+        /// <summary>
+        /// Buoton qui sert à supprimer un objet du datagridview et de la basse de donné (si sauvegarder).
+        /// Retire également l'objet de la liste. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             try
@@ -125,7 +140,6 @@ namespace GestionEquipeHockey.Formulaires
                     {
                         MessageBox.Show("Veuillez dabord sauvegarder les modifications!", "Error");
                     }
-
                 }
             }
             catch
@@ -143,6 +157,10 @@ namespace GestionEquipeHockey.Formulaires
             Classe_statique.listContrats.Remove(obj);
         }
 
+        /// <summary>
+        /// Méthode qui sert à confirmer si le code du joueur existe et fait partit de l'équipe
+        /// </summary>
+        /// <param name="code"></param>
         public void ModifContrat(string code)
         {
             Gardiens_but obj = null;
@@ -169,7 +187,12 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
-
+        /// <summary>
+        /// Bouton qui appelle la méthode ModifContrat et qui permet de voir le panel 
+        /// qui donne ensuite acces à faire des modifications. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnContinuer_Click(object sender, EventArgs e)
         {
             // Vérifier si le code du joueur est chiffre de longeur 5
@@ -186,10 +209,14 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+        /// <summary>
+        /// Méthode qui fait la gestion d'erreurs à l'aide de Regex pour les champs où
+        /// l'utilisateur doit entrer des données
+        /// </summary>
+        /// <returns></returns>
         public bool VérificationChamps()
         {
             bool valid = true;
-
 
             // Vérifier si le numéro du contrat comporte 10 caractères
             // Sinon Message d'erreur
@@ -242,6 +269,11 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+        /// <summary>
+        /// Méthode qui sert à supprimer un objet de la liste et de la base de données
+        /// avant d'être réajouter suite à des modifications.
+        /// </summary>
+        /// <param name="numero"></param>
         public void Modifsupprimer(string numero)
         {
 
@@ -262,6 +294,13 @@ namespace GestionEquipeHockey.Formulaires
             }
             Classe_statique.listContrats.Remove(obj);
         }
+
+        /// <summary>
+        /// Méthode qui affecte les modifications apportées à un objet.
+        /// Réinitialise les champs avec la méthode ClearChamps().
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
             if (VérificationChamps())
@@ -279,12 +318,18 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+        /// <summary>
+        /// Bouton qui sert à rechercher selon certain critère dans le datagridview
+        /// Code tiré des notes de cours et exercices sur Léa
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRechercher_Click(object sender, EventArgs e)
         {
             //Parcourir les lignes du DataTable DtEtudiants
             foreach (DataRow row in Ado.DtContrats.Rows)
             {
-                //Si le numéro de l'étudiant existe dans la table, Afficher les informations de l'étudiant dans un MessageBox. Row[0] correspond au champ Numéro
+                //Si le numéro de contrat existe dans la table, Afficher les informations dans un MessageBox. Row[0] correspond au champ Numéro
                 if (row[2].ToString() == txtRecherche.Text)
                     MessageBox.Show("Le code du joueur :  " + row[0] + "\n"
                                       + "Le numéro de contrat : " + row[2] + "\n"
@@ -293,10 +338,10 @@ namespace GestionEquipeHockey.Formulaires
                                       + "Le montant annuel: " + row[5]+ "\n","Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            //Parcourir les lignes du DataTable DtEtudiants
+            //Parcourir les lignes du DataTable 
             foreach (DataRow row in Ado.DtContrats.Rows)
             {
-                //Si le numéro de l'étudiant existe dans la table, Afficher les informations de l'étudiant dans un MessageBox. Row[0] correspond au champ Numéro
+                //Si le code du joueur existe dans la table, Afficher les informations dans un MessageBox. Row[0] correspond au champ Numéro
                 if (row[0].ToString() == txtCodeJoueurRecherche.Text)
                     MessageBox.Show("Le code du joueur :  " + row[0] + "\n"
                                       + "Le numéro de contrat : " + row[2] + "\n"
@@ -304,7 +349,6 @@ namespace GestionEquipeHockey.Formulaires
                                       + "La date de fin: " + row[4] + "\n"
                                       + "Le montant annuel: " + row[5] + "\n", "Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
     }
 }

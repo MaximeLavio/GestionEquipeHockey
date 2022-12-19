@@ -159,8 +159,7 @@
             this.comboBoxPosition.FormattingEnabled = true;
             this.comboBoxPosition.Items.AddRange(new object[] {
             "Attaquant",
-            "Défenseur",
-            "Gardien"});
+            "Défenseur"});
             this.comboBoxPosition.Location = new System.Drawing.Point(175, 424);
             this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPosition.Name = "comboBoxPosition";
@@ -429,11 +428,8 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Contrat",
-            "Points",
-            "Position",
-            "Buts ",
-            "Age"});
+            "Gardien avec le plus d\'arret",
+            "Gardien plus agé"});
             this.comboBox2.Location = new System.Drawing.Point(230, 42);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
@@ -452,7 +448,7 @@
             // 
             // btnSauvegarderGardiens
             // 
-            this.btnSauvegarderGardiens.Location = new System.Drawing.Point(165, 487);
+            this.btnSauvegarderGardiens.Location = new System.Drawing.Point(32, 477);
             this.btnSauvegarderGardiens.Name = "btnSauvegarderGardiens";
             this.btnSauvegarderGardiens.Size = new System.Drawing.Size(199, 30);
             this.btnSauvegarderGardiens.TabIndex = 93;
@@ -462,7 +458,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 487);
+            this.button1.Location = new System.Drawing.Point(453, 38);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 30);

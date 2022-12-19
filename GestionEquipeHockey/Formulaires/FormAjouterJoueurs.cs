@@ -19,6 +19,9 @@ namespace GestionEquipeHockey.Formulaires
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Méthode pour réinitialiser les champs des formulaires
+        /// </summary>
         public void ClearChamps()
         {
             txtNomJoueur.Text = "";
@@ -31,6 +34,12 @@ namespace GestionEquipeHockey.Formulaires
             comboBoxPosition.Text = "";
         }
 
+
+        /// <summary>
+        /// Méthode qui fait la gestion d'erreurs à l'aide de Regex pour les champs où
+        /// l'utilisateur doit entrer des données
+        /// </summary>
+        /// <returns></returns>
         public bool VérificationChamps()
         {
             bool valid = true;
@@ -131,6 +140,13 @@ namespace GestionEquipeHockey.Formulaires
 
         }
 
+
+        /// <summary>
+        /// Bouton qui créer un objet Joueur ou Gardiens une fois tout les demandes et gestions d'erreur fait. 
+        /// Ajoute également l'objet à la liste selon le cas.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAjouterJoueur_Click(object sender, EventArgs e)
         {
             if (comboBoxPosition.Text == "Gardien")
@@ -190,16 +206,8 @@ namespace GestionEquipeHockey.Formulaires
                     joueur.Cote = comboBoxCote.Text;
                     Classe_statique.listJoueurs.Add(joueur);
                     ClearChamps();
-                }
-           
-            }
-            
-
-        }
-
-        private void FormAjouterJoueurs_Load(object sender, EventArgs e)
-        {
-
-        }
+                }          
+            }            
+        } 
     }
 }

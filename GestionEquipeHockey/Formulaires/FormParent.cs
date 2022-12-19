@@ -18,6 +18,11 @@ namespace GestionEquipeHockey.Formulaires
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour ajouter des joueurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formulaires.FormAjouterJoueurs f = new Formulaires.FormAjouterJoueurs();
@@ -25,6 +30,11 @@ namespace GestionEquipeHockey.Formulaires
             f.Show();
         }
 
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour ajouter des contrats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void contratsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formulaires.FormAjouterContrats f = new Formulaires.FormAjouterContrats();
@@ -32,6 +42,11 @@ namespace GestionEquipeHockey.Formulaires
             f.Show();
         }
 
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour afficher les contrats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void contratsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Formulaires.FormAfficherContrats f = new Formulaires.FormAfficherContrats();
@@ -39,6 +54,11 @@ namespace GestionEquipeHockey.Formulaires
             f.Show();
         }
 
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour afficher des joueurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void joueursToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Formulaires.FormAfficherJoueurs f = new Formulaires.FormAfficherJoueurs();
@@ -46,6 +66,11 @@ namespace GestionEquipeHockey.Formulaires
             f.Show();
         }
 
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour afficher des gardiens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void gardiensToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formulaires.FormAfficherGardiens f = new Formulaires.FormAfficherGardiens();

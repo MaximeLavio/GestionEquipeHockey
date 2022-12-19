@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionEquipeHockey.Classes
 {
+    /// <summary>
+    /// Classe qui crée des objets Gardiens de but. Cette classe enfant hérite de la classe parents Joueurs
+    /// </summary>
     public class Gardiens_but : Joueurs
     {
         // Attributs de la class Gardiens_but
@@ -43,7 +46,8 @@ namespace GestionEquipeHockey.Classes
         // Autres méthodes 
 
         /// <summary>
-        /// Méthode qui calcule le nombre de buts alloué par le gardien de but 
+        /// Méthode qui calcule le nombre de buts alloué par le gardien de but selon
+        /// le nombre de tirs recus et le nombre d'arrêts éffectuer
         /// </summary>
         /// <returns>Le nombre de buts alloué</returns>
         public int Buts_Alloue()
@@ -52,7 +56,7 @@ namespace GestionEquipeHockey.Classes
         }
 
         /// <summary>
-        /// Méthode qui calcule l'efficacité du gardien
+        /// Méthode qui calcule l'efficacité du gardien selon le nombre de tirs recus et le nombre d'arrêts éffectuer
         /// </summary>
         /// <returns> Le pourcentage d'efficacité du gardien</returns>
         public override int Calculer_Efficacite()

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestionEquipeHockey.Classes
 {
+    /// <summary>
+    /// Classe qui crée des objets Contrats 
+    /// </summary>
     public class Contrats : IContrat
     {
         // Attributs de la class Contrats
@@ -67,6 +70,11 @@ namespace GestionEquipeHockey.Classes
 
         // Autres méthodes 
 
+        /// <summary>
+        /// Méthode qui calcule le montat total du contrat selon la duré et le montant annuel 
+        /// Méthode qui vient de l'interface
+        /// </summary>
+        /// <returns>Retourne le montant totale</returns>
         public float Montant_total()
         {
             return montant_annuel * (date_fin.Year - date_debut.Year);

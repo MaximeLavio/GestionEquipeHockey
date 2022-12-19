@@ -21,6 +21,10 @@ namespace GestionEquipeHockey.Formulaires
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Méthode pour réinitialiser les champs des formulaires
+        /// </summary>
         public void ClearChamps()
         {
             txtCode_joueur.Text = "";
@@ -38,22 +42,13 @@ namespace GestionEquipeHockey.Formulaires
             txtNb_passes.Text = "";
             txtMises_echec.Text = "";
         }
-    
-        private void lblTitreModifierJoueurs_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Méthode qui sert à supprimer un objet de la liste et de la base de données
+        /// avant d'être réajouter suite à des modifications.
+        /// </summary>
+        /// <param name="numero"></param>
         public void Modifsupprimer(string numero)
         {
 
@@ -75,11 +70,15 @@ namespace GestionEquipeHockey.Formulaires
             Classe_statique.listJoueurs.Remove(obj);
         }
 
+
+        /// <summary>
+        /// Méthode qui fait la gestion d'erreurs à l'aide de Regex pour les champs où
+        /// l'utilisateur doit entrer des données
+        /// </summary>
+        /// <returns></returns>
         public bool VérificationChampsModif()
         {
             bool valid = true;
-
-
 
             // Vérifier si le Nom du joueur Commence par Majuscule suivit des minuscules
             // Sinon Message d'erreur
@@ -183,6 +182,11 @@ namespace GestionEquipeHockey.Formulaires
 
         }
 
+
+        /// <summary>
+        /// Méthode qui sert à confirmer si le code du joueur existe et fait partit de l'équipe
+        /// </summary>
+        /// <param name="code"></param>
         public void ModifJoueur(string code)
         {
             Joueurs_avant obj = null;
@@ -217,7 +221,13 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
-            private void btnContinuer_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Bouton qui appelle la méthode ModifJoueurs et qui permet de voir les boutons
+        /// qui donne ensuite acces à faire des modifications. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnContinuer_Click(object sender, EventArgs e)
             {
             // Vérifier si le code du joueur est chiffre de longeur 5
             // Sinon Message d'erreur
@@ -233,12 +243,18 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+
+        /// <summary>
+        /// Méthode qui se déroule au chargement du formulaire.
+        /// Sert à afficher les objets Gardiens dans un datagridView au chargement du formulaire
+        /// Code tiré des notes de cours et exercices sur Léa (En mode déconnecter)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormModifierJoueurs_Load(object sender, EventArgs e)
         {
             btnModifier.Enabled = false;
             btnSupprimer.Enabled = false;
-
-
 
 
             //Instancier un objet Ado qui sera utilisé pour se connecter à la base de données //et y accéder
@@ -267,17 +283,6 @@ namespace GestionEquipeHockey.Formulaires
             //Afficher la table Ado.DtEtudiant dans notre dataGridView : il suffit d’associer //la table obtenue Ado.DtEtudiant au DataSource de notre dataGridView
             this.dataGridView2.DataSource = Ado.DtJoueurs;
             //this.datagridview.headercolumn kek choses pour changer titre colomn
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -313,10 +318,15 @@ namespace GestionEquipeHockey.Formulaires
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
 
+
+        /// <summary>
+        /// Bouton qui affecte les modifications apportées à un objet.
+        /// Réinitialise les champs avec la méthode ClearChamps().
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
           
@@ -347,6 +357,12 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+
+        /// <summary>
+        /// Bouton qui sert à sauvegarder les modifications apporter au datagridview dans la base de donnée.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSauvegarderJoueurs_Click(object sender, EventArgs e)
         {
             //Gestion d'exception dans le cas où il y a problème avec le serveur
@@ -365,6 +381,13 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+
+        /// <summary>
+        /// Buoton qui sert à supprimer un objet du datagridview et de la basse de donné (si sauvegarder).
+        /// Retire également l'objet de la liste. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             try
@@ -398,11 +421,6 @@ namespace GestionEquipeHockey.Formulaires
                 }
             }
             Classe_statique.listJoueurs.Remove(obj);
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
 
         }
     }

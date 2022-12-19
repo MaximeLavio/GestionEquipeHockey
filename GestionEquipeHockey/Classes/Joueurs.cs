@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace GestionEquipeHockey.Classes
 {
+    /// <summary>
+    /// Classe parent Joueurs
+    /// </summary>
     abstract public class Joueurs
     {
         // Attributs de la classe joueurs
-        private string code_joueur;            // Numéro unique à chaque joueur
+        private string code_joueur;         // Numéro unique à chaque joueur
         private string nom_joueur;         // Nom du joueur
         private string prenom_joueur;      // Prénom du joueur
         private DateTime date_naissance;   //Date de naissance du joueur
@@ -130,6 +133,10 @@ namespace GestionEquipeHockey.Classes
 
         // Autres méthodes 
 
+        /// <summary>
+        /// Méthode abstrite de la classe parents qui va être définit dans les classes enfants
+        /// </summary>
+        /// <returns></returns>
         abstract public int Calculer_Efficacite();
      
     }

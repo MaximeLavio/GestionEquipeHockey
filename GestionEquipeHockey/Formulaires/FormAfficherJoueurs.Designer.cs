@@ -69,7 +69,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnessai = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -85,7 +84,6 @@
             this.lblTitreModifierJoueurs.Size = new System.Drawing.Size(462, 39);
             this.lblTitreModifierJoueurs.TabIndex = 8;
             this.lblTitreModifierJoueurs.Text = "Modifier un joueur de l\'équipe";
-            this.lblTitreModifierJoueurs.Click += new System.EventHandler(this.lblTitreModifierJoueurs_Click);
             // 
             // btnContinuer
             // 
@@ -461,7 +459,7 @@
             // 
             // btnSauvegarderJoueurs
             // 
-            this.btnSauvegarderJoueurs.Location = new System.Drawing.Point(178, 499);
+            this.btnSauvegarderJoueurs.Location = new System.Drawing.Point(29, 481);
             this.btnSauvegarderJoueurs.Name = "btnSauvegarderJoueurs";
             this.btnSauvegarderJoueurs.Size = new System.Drawing.Size(199, 29);
             this.btnSauvegarderJoueurs.TabIndex = 48;
@@ -473,11 +471,8 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Contrat",
-            "Points",
-            "Position",
-            "Buts ",
-            "Age"});
+            "Joueur avec le plus de buts",
+            "Joueur avec le plus de mises en échec"});
             this.comboBox2.Location = new System.Drawing.Point(203, 51);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
@@ -496,31 +491,19 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(40, 499);
+            this.button2.Location = new System.Drawing.Point(428, 47);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 30);
             this.button2.TabIndex = 45;
             this.button2.Text = "Afficher";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnessai
-            // 
-            this.btnessai.Location = new System.Drawing.Point(596, 549);
-            this.btnessai.Margin = new System.Windows.Forms.Padding(4);
-            this.btnessai.Name = "btnessai";
-            this.btnessai.Size = new System.Drawing.Size(121, 28);
-            this.btnessai.TabIndex = 71;
-            this.btnessai.Text = "Modifier";
-            this.btnessai.UseVisualStyleBackColor = true;
             // 
             // FormAfficherJoueurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 758);
-            this.Controls.Add(this.btnessai);
             this.Controls.Add(this.btnSauvegarderJoueurs);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label1);
@@ -588,6 +571,5 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnessai;
     }
 }
