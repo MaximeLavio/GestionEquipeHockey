@@ -46,7 +46,6 @@
             this.btnModifier = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCode_joueur = new System.Windows.Forms.TextBox();
-            this.lblCode = new System.Windows.Forms.Label();
             this.lblTitreContrats = new System.Windows.Forms.Label();
             this.btnContinuer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnRechercherCodeJoueur = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -237,36 +237,26 @@
             // 
             // txtCode_joueur
             // 
-            this.txtCode_joueur.Location = new System.Drawing.Point(1038, 127);
+            this.txtCode_joueur.Location = new System.Drawing.Point(1054, 116);
             this.txtCode_joueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode_joueur.Name = "txtCode_joueur";
             this.txtCode_joueur.Size = new System.Drawing.Size(200, 22);
             this.txtCode_joueur.TabIndex = 74;
             // 
-            // lblCode
-            // 
-            this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(900, 130);
-            this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(98, 16);
-            this.lblCode.TabIndex = 73;
-            this.lblCode.Text = "Code du joueur";
-            // 
             // lblTitreContrats
             // 
             this.lblTitreContrats.AutoSize = true;
             this.lblTitreContrats.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreContrats.Location = new System.Drawing.Point(1008, 54);
+            this.lblTitreContrats.Location = new System.Drawing.Point(904, 49);
             this.lblTitreContrats.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitreContrats.Name = "lblTitreContrats";
-            this.lblTitreContrats.Size = new System.Drawing.Size(275, 39);
+            this.lblTitreContrats.Size = new System.Drawing.Size(504, 39);
             this.lblTitreContrats.TabIndex = 72;
-            this.lblTitreContrats.Text = "Modifier Contrats";
+            this.lblTitreContrats.Text = "Modifier ou supprimer un contrat";
             // 
             // btnContinuer
             // 
-            this.btnContinuer.Location = new System.Drawing.Point(1278, 127);
+            this.btnContinuer.Location = new System.Drawing.Point(1262, 113);
             this.btnContinuer.Margin = new System.Windows.Forms.Padding(4);
             this.btnContinuer.Name = "btnContinuer";
             this.btnContinuer.Size = new System.Drawing.Size(100, 28);
@@ -315,7 +305,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Orange;
-            this.label5.Location = new System.Drawing.Point(902, 153);
+            this.label5.Location = new System.Drawing.Point(953, 134);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(336, 16);
@@ -345,12 +335,23 @@
             this.btnRechercherCodeJoueur.UseVisualStyleBackColor = true;
             this.btnRechercherCodeJoueur.Click += new System.EventHandler(this.btnRechercherCodeJoueur_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(948, 118);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 16);
+            this.label7.TabIndex = 79;
+            this.label7.Text = "Code du joueur";
+            // 
             // FormAfficherContrats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1497, 797);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnRechercherCodeJoueur);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -366,7 +367,6 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCode_joueur);
-            this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblTitreContrats);
             this.Name = "FormAfficherContrats";
             this.Text = "Afficher et Modifier les informations d\'un contrat";
@@ -390,7 +390,6 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCode_joueur;
-        private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblTitreContrats;
         private System.Windows.Forms.Button btnContinuer;
         private System.Windows.Forms.DateTimePicker dtpFinContrat;
@@ -408,5 +407,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnRechercherCodeJoueur;
+        private System.Windows.Forms.Label label7;
     }
 }

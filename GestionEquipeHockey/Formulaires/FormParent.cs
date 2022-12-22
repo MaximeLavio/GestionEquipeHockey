@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GestionEquipeHockey.Classes;
 
 namespace GestionEquipeHockey.Formulaires
 {
@@ -79,6 +80,11 @@ namespace GestionEquipeHockey.Formulaires
             Formulaires.FormAjouterContrats f = new Formulaires.FormAjouterContrats();
             f.MdiParent = this;
             f.Show();
+        }
+
+        private void FormParent_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

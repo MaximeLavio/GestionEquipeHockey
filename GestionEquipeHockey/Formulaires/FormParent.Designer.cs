@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormParent));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +41,6 @@
             this.contratsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,15 +67,29 @@
             this.gestionToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.gestionToolStripMenuItem.Text = "Ajouter";
             // 
+            // joueursToolStripMenuItem
+            // 
+            this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
+            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.joueursToolStripMenuItem.Text = "Joueurs";
+            this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
+            // 
+            // contratsToolStripMenuItem
+            // 
+            this.contratsToolStripMenuItem.Name = "contratsToolStripMenuItem";
+            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.contratsToolStripMenuItem.Text = "Contrats";
+            this.contratsToolStripMenuItem.Click += new System.EventHandler(this.contratsToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.quitterToolStripMenuItem.Text = "Quitter";
             // 
             // affichageToolStripMenuItem
@@ -93,48 +107,34 @@
             // joueursToolStripMenuItem1
             // 
             this.joueursToolStripMenuItem1.Name = "joueursToolStripMenuItem1";
-            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.joueursToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
             this.joueursToolStripMenuItem1.Text = "Joueurs";
             this.joueursToolStripMenuItem1.Click += new System.EventHandler(this.joueursToolStripMenuItem1_Click);
             // 
             // gardiensToolStripMenuItem
             // 
             this.gardiensToolStripMenuItem.Name = "gardiensToolStripMenuItem";
-            this.gardiensToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gardiensToolStripMenuItem.Size = new System.Drawing.Size(150, 26);
             this.gardiensToolStripMenuItem.Text = "Gardiens";
             this.gardiensToolStripMenuItem.Click += new System.EventHandler(this.gardiensToolStripMenuItem_Click);
             // 
             // contratsToolStripMenuItem1
             // 
             this.contratsToolStripMenuItem1.Name = "contratsToolStripMenuItem1";
-            this.contratsToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.contratsToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
             this.contratsToolStripMenuItem1.Text = "Contrats";
             this.contratsToolStripMenuItem1.Click += new System.EventHandler(this.contratsToolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(147, 6);
             // 
             // quitterToolStripMenuItem1
             // 
             this.quitterToolStripMenuItem1.Name = "quitterToolStripMenuItem1";
-            this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(150, 26);
             this.quitterToolStripMenuItem1.Text = "Quitter";
-            // 
-            // joueursToolStripMenuItem
-            // 
-            this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.joueursToolStripMenuItem.Text = "Joueurs";
-            this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
-            // 
-            // contratsToolStripMenuItem
-            // 
-            this.contratsToolStripMenuItem.Name = "contratsToolStripMenuItem";
-            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.contratsToolStripMenuItem.Text = "Contrats";
-            this.contratsToolStripMenuItem.Click += new System.EventHandler(this.contratsToolStripMenuItem_Click);
             // 
             // FormParent
             // 
@@ -149,6 +149,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormParent";
             this.Text = "Gestion de l\'équipe";
+            this.Load += new System.EventHandler(this.FormParent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

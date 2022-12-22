@@ -36,7 +36,7 @@ namespace GestionEquipeHockey.Formulaires
             numUpDownNumero.Text = "";
             comboBoxCote.Text = "";
             comboBoxPosition.Text = "";
-            txtNb_matchs.Text = 
+            txtNb_matchs.Text =
             txtMinutes_punitions.Text = "";
             txtNb_buts.Text = "";
             txtNb_passes.Text = "";
@@ -51,23 +51,30 @@ namespace GestionEquipeHockey.Formulaires
         /// <param name="numero"></param>
         public void Modifsupprimer(string numero)
         {
-
-            //Parcourir les lignes de la table
-            foreach (DataRow row in Ado.DtJoueurs.Rows)
+            try
             {
-                //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
-                if (row[0].ToString().Equals(numero))
-                    row.Delete();
-            }
-            Joueurs_avant obj = null;
-            foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
-            {
-                if (joueur.Code_Joueur == numero)
+                //Parcourir les lignes de la table
+                foreach (DataRow row in Ado.DtJoueurs.Rows)
                 {
-                    obj = joueur;
+                    //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
+                    if (row[0].ToString().Equals(numero))
+                        row.Delete();
                 }
+                Joueurs_avant obj = null;
+                foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
+                {
+                    if (joueur.Code_Joueur == numero)
+                    {
+                        obj = joueur;
+                    }
+                }
+                Classe_statique.listJoueurs.Remove(obj);
             }
-            Classe_statique.listJoueurs.Remove(obj);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
 
@@ -228,7 +235,7 @@ namespace GestionEquipeHockey.Formulaires
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnContinuer_Click(object sender, EventArgs e)
-            {
+        {
             // Vérifier si le code du joueur est chiffre de longeur 5
             // Sinon Message d'erreur
             Regex regex_code = new Regex("^[0-9]{5}$");
@@ -287,7 +294,7 @@ namespace GestionEquipeHockey.Formulaires
             //this.datagridview.headercolumn kek choses pour changer titre colomn
 
 
-         
+
             //Mettre les valeurs entrées par l'utilisateur dans l'objet DataRow UnEtudiant
             try
             {
@@ -331,7 +338,7 @@ namespace GestionEquipeHockey.Formulaires
         /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
-          
+
             if (comboBoxPosition.Text == "Attaquant" || comboBoxPosition.Text == "Défenseur")
             {
                 if (VérificationChampsModif())
@@ -353,6 +360,9 @@ namespace GestionEquipeHockey.Formulaires
                     joueur.Nb_Passes = Convert.ToInt16(txtNb_passes.Text);
                     joueur.Nb_Mises_Echec = Convert.ToInt16(txtMises_echec.Text);
                     Classe_statique.listJoueurs.Add(joueur);
+
+                    Sauvegarder();
+                    FormModifierJoueurs_Load(sender, e);
                     MessageBox.Show("Joueur modifié avec succès!", "Succès");
                     ClearChamps();
                 }
@@ -409,13 +419,12 @@ namespace GestionEquipeHockey.Formulaires
                             btnModifier.Enabled = false;
                             btnSupprimer.Enabled = false;
                             ClearChamps();
-                        }                        
+                        }
                     }
                     catch
                     {
                         MessageBox.Show("Veuillez dabord sauvegarder les modifications!", "Error");
                     }
-
                 }
             }
             catch
@@ -425,7 +434,7 @@ namespace GestionEquipeHockey.Formulaires
             Joueurs_avant obj = null;
             foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
             {
-                if (joueur.Code_Joueur == txtCode_joueur.Text);
+                if (joueur.Code_Joueur == txtCode_joueur.Text) ;
                 {
                     obj = joueur;
                 }
@@ -433,6 +442,23 @@ namespace GestionEquipeHockey.Formulaires
             Classe_statique.listJoueurs.Remove(obj);
 
         }
+        public void Sauvegarder()
+        {
+            //Gestion d'exception dans le cas où il y a problème avec le serveur
+            try
+            {
+                // SqlCommandBuilder est la classe qui me permet de sauvegarder       // dans une Base de données.
+                //Son constructeur prend en paramètres le data adapter Adapter. 
+                SqlCommandBuilder builder = new SqlCommandBuilder(Ado.Adapter);
+                //Appeler la méthode Update de l’adapteur.
+                //Elle prend en paramètres le DataSet, et le nom de la table.	
+                Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtJoueurs.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
-    }
+}
 

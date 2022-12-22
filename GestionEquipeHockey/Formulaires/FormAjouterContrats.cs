@@ -63,6 +63,7 @@ namespace GestionEquipeHockey.Formulaires
             {
                 btnConfirmerContrat.Enabled = true;
                 txtCode_gardien.Text = "";
+                //txtCode_gardien.Text = null;
             }
         }
 
@@ -90,6 +91,7 @@ namespace GestionEquipeHockey.Formulaires
             {
                 btnConfirmerContrat.Enabled = true;
                 txtCode_joueur.Text = "";
+                //txtCode_joueur.Text = null;
             }
         }
 
@@ -198,8 +200,16 @@ namespace GestionEquipeHockey.Formulaires
                     contrat.Date_Debut = dtpDebutContrat.Value;
                     contrat.Date_Fin = dtpFinContrat.Value;
                     contrat.Montant_Annuel = float.Parse(txtMontantAnnuel.Text);
+                    /*if (txtCode_joueur.Text == "")
+                    {
+                        contrat.Code_Joueur = null;
+                    }
+                    else if (txtCode_gardien.Text == "")
+                    {
+                        contrat.Code_Gardien = null;
+                    }*/
                     contrat.Code_Joueur = txtCode_joueur.Text;
-                    contrat.Code_Gardien = txtCode_gardien.Text;
+                    //contrat.Code_Gardien = txtCode_gardien.Text;
                     Classe_statique.listContrats.Add(contrat);
                     MessageBox.Show("Contrat attribué au joueur avec succès!", "Succès");
                     ClearChamps();

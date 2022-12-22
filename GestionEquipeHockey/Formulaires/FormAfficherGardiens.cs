@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -67,7 +68,7 @@ namespace GestionEquipeHockey.Formulaires
                 }
                 Classe_statique.listGardiens.Remove(obj);
             }
-            catch
+            catch 
             {
                 MessageBox.Show("Veuillez dabord faire une sauvegarde avant de modifier le joueur");
             }
@@ -362,6 +363,10 @@ namespace GestionEquipeHockey.Formulaires
                 joueur.Nb_Arrets = Convert.ToInt16(txtNb_arrets.Text);
                 joueur.Nb_Tire_Recus = Convert.ToInt16(txtTires_recus.Text);
                 Classe_statique.listGardiens.Add(joueur);
+
+                Sauvegarder();
+
+                FormAfficherGardiens_Load(sender, e);
                 MessageBox.Show("Gardien modifié avec succès!", "Succès");
                 ClearChamps();
             }
@@ -391,8 +396,7 @@ namespace GestionEquipeHockey.Formulaires
                             btnModifier.Enabled = false;
                             btnSupprimer.Enabled = false;
                             ClearChamps();
-                        }
-                                                     
+                        }                                                    
                     }
                     catch
                     {
@@ -436,6 +440,24 @@ namespace GestionEquipeHockey.Formulaires
             else
             {
                 MessageBox.Show("Le code du joueur doit être composé de 5 chiffres.", "Error");
+            }
+        }
+
+        public void Sauvegarder()
+        {
+            //Gestion d'exception dans le cas où il y a problème avec le serveur
+            try
+            {
+                // SqlCommandBuilder est la classe qui me permet de sauvegarder       // dans une Base de données.
+                //Son constructeur prend en paramètres le data adapter Adapter. 
+                SqlCommandBuilder builder = new SqlCommandBuilder(Ado.Adapter);
+                //Appeler la méthode Update de l’adapteur.
+                //Elle prend en paramètres le DataSet, et le nom de la table.	
+                Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtGardiens.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

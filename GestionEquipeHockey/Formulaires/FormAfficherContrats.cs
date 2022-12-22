@@ -20,7 +20,7 @@ namespace GestionEquipeHockey.Formulaires
         {
             InitializeComponent();
         }
-        
+
         /// <summary>
         /// Méthode qui sert à effacé les champs, réinitialiser les champs 
         /// </summary>
@@ -64,7 +64,7 @@ namespace GestionEquipeHockey.Formulaires
             //la table Etudiants est la première table (indice 0) du DataSet DsScolarite. Si au //lieu d’utiliser une requête SQL on utilise une procédure stockée qui 
             // retourne plusieurs tables, ces tables seront dans le DataSet Ado.DsScolarite
             // et pour y accéder il suffit d’utiliser le bon indice : 0,1,2, etc. Dans notre //cas, la requête retourne une seule table. On met ce résultat dans la DataTable // DtEtudiant
-            Ado.DtContrats= Ado.DsGestionHockey.Tables[0];
+            Ado.DtContrats = Ado.DsGestionHockey.Tables[0];
 
             //Afficher la table Ado.DtEtudiant dans notre dataGridView : il suffit d’associer //la table obtenue Ado.DtEtudiant au DataSource de notre dataGridView
             this.dataGridView2.DataSource = Ado.DtContrats;
@@ -78,7 +78,7 @@ namespace GestionEquipeHockey.Formulaires
                     DataRow UnContrat = Ado.DtContrats.NewRow();
 
                     UnContrat[0] = contrat.Code_Joueur;
-                    UnContrat[1] = contrat.Code_Gardien;
+                    //UnContrat[1] = contrat.Code_Gardien;
                     UnContrat[2] = contrat.Num_Contrat;
                     UnContrat[3] = contrat.Date_Debut;
                     UnContrat[4] = contrat.Date_Fin;
@@ -112,9 +112,9 @@ namespace GestionEquipeHockey.Formulaires
                 Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtContrats.ToString());
                 MessageBox.Show("Sauvegarde complété!", "Sauvegarde");
             }
-            catch 
+            catch (Exception ex)
             {
-                MessageBox.Show("Veuillez d'abord sauvegarder le joueur!");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -136,8 +136,13 @@ namespace GestionEquipeHockey.Formulaires
                     {
                         //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
                         if (row[0].ToString().Equals(txtCode_joueur.Text.Trim()))
+                        {
                             row.Delete();
                             MessageBox.Show("Contrat supprimer avec succès!", "Succès");
+                            btnModifier.Enabled = false;
+                            btnSupprimer.Enabled = false;
+                            ClearChamps();
+                        }
                     }
                     catch
                     {
@@ -152,7 +157,7 @@ namespace GestionEquipeHockey.Formulaires
             Contrats obj = null;
             foreach (Contrats contrat in Classe_statique.listContrats)
             {
-                if (contrat.Code_Joueur == txtCode_joueur.Text) 
+                if (contrat.Code_Joueur == txtCode_joueur.Text)
                 {
                     obj = contrat;
                 }
@@ -279,23 +284,29 @@ namespace GestionEquipeHockey.Formulaires
         /// <param name="numero"></param>
         public void Modifsupprimer(string numero)
         {
-
-            //Parcourir les lignes de la table
-            foreach (DataRow row in Ado.DtContrats.Rows)
+            try
             {
-                //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
-                if (row[0].ToString().Equals(numero))
-                    row.Delete();
-            }
-            Contrats obj = null;
-            foreach (Contrats contrat in Classe_statique.listContrats)
-            {
-                if (contrat.Code_Joueur == numero)
+                //Parcourir les lignes de la table
+                foreach (DataRow row in Ado.DtContrats.Rows)
                 {
-                    obj = contrat;
+                    //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
+                    if (row[0].ToString().Equals(numero))
+                        row.Delete();
                 }
+                Contrats obj = null;
+                foreach (Contrats contrat in Classe_statique.listContrats)
+                {
+                    if (contrat.Code_Joueur == numero)
+                    {
+                        obj = contrat;
+                    }
+                }
+                Classe_statique.listContrats.Remove(obj);
             }
-            Classe_statique.listContrats.Remove(obj);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>
@@ -308,7 +319,7 @@ namespace GestionEquipeHockey.Formulaires
         {
             if (VérificationChamps())
             {
-                Modifsupprimer(txtCode_joueur.Text); 
+                Modifsupprimer(txtCode_joueur.Text.Trim());
 
                 Contrats contrat = new Contrats();
                 contrat.Num_Contrat = txtNumContrat.Text;
@@ -317,6 +328,9 @@ namespace GestionEquipeHockey.Formulaires
                 contrat.Montant_Annuel = float.Parse(txtMontantAnnuel.Text);
                 contrat.Code_Joueur = txtCode_joueur.Text;
                 Classe_statique.listContrats.Add(contrat);
+
+                Sauvegarder();
+                FormAfficherContrats_Load(sender, e);
                 MessageBox.Show("Contrat modifié avec succès!", "Succès");
                 ClearChamps();
             }
@@ -340,8 +354,8 @@ namespace GestionEquipeHockey.Formulaires
                                       + "Le numéro de contrat : " + row[2] + "\n"
                                       + "La date de début : " + row[3] + "\n"
                                       + "La date de fin: " + row[4] + "\n"
-                                      + "Le montant annuel: " + row[5]+ "\n","Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }         
+                                      + "Le montant annuel: " + row[5] + "\n", "Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnRechercherCodeJoueur_Click(object sender, EventArgs e)
@@ -351,7 +365,7 @@ namespace GestionEquipeHockey.Formulaires
             {
                 //Si le code du joueur existe dans la table, Afficher les informations dans un MessageBox. Row[0] correspond au champ Numéro
                 if (row[0].ToString() == txtCodeJoueurRecherche.Text)
-                    MessageBox.Show("Le code du joueur :  " + row[0] + "\n"                                      
+                    MessageBox.Show("Le code du joueur :  " + row[0] + "\n"
                                       + "Le numéro de contrat : " + row[2] + "\n"
                                       + "La date de début : " + row[3] + "\n"
                                       + "La date de fin: " + row[4] + "\n"
@@ -368,6 +382,23 @@ namespace GestionEquipeHockey.Formulaires
                                       + "La date de début : " + row[3] + "\n"
                                       + "La date de fin: " + row[4] + "\n"
                                       + "Le montant annuel: " + row[5] + "\n", "Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public void Sauvegarder()
+        {
+            //Gestion d'exception dans le cas où il y a problème avec le serveur
+            try
+            {
+                // SqlCommandBuilder est la classe qui me permet de sauvegarder       // dans une Base de données.
+                //Son constructeur prend en paramètres le data adapter Adapter. 
+                SqlCommandBuilder builder = new SqlCommandBuilder(Ado.Adapter);
+                //Appeler la méthode Update de l’adapteur.
+                //Elle prend en paramètres le DataSet, et le nom de la table.	
+                Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtContrats.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
