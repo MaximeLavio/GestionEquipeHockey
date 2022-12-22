@@ -49,6 +49,7 @@
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
             this.lblCode_joueur = new System.Windows.Forms.Label();
             this.txtAjoutCode_joueur = new System.Windows.Forms.TextBox();
+            this.lblMessageReussi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
@@ -251,11 +252,20 @@
             this.txtAjoutCode_joueur.Size = new System.Drawing.Size(188, 22);
             this.txtAjoutCode_joueur.TabIndex = 19;
             // 
+            // lblMessageReussi
+            // 
+            this.lblMessageReussi.AutoSize = true;
+            this.lblMessageReussi.Location = new System.Drawing.Point(701, 585);
+            this.lblMessageReussi.Name = "lblMessageReussi";
+            this.lblMessageReussi.Size = new System.Drawing.Size(0, 16);
+            this.lblMessageReussi.TabIndex = 20;
+            // 
             // FormAjouterJoueurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1148, 639);
+            this.Controls.Add(this.lblMessageReussi);
             this.Controls.Add(this.txtAjoutCode_joueur);
             this.Controls.Add(this.lblCode_joueur);
             this.Controls.Add(this.comboBoxPosition);
@@ -280,6 +290,7 @@
             this.Name = "FormAjouterJoueurs";
             this.Text = "Ajouter des joueurs";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormAjouterJoueurs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
@@ -310,5 +321,6 @@
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.TextBox txtAjoutCode_joueur;
         private System.Windows.Forms.Label lblCode_joueur;
+        private System.Windows.Forms.Label lblMessageReussi;
     }
 }

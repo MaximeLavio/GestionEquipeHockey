@@ -253,8 +253,10 @@ namespace GestionEquipeHockey.Formulaires
         /// <param name="e"></param>
         private void FormModifierJoueurs_Load(object sender, EventArgs e)
         {
+            //Désactiver bouttons
             btnModifier.Enabled = false;
             btnSupprimer.Enabled = false;
+
 
 
             //Instancier un objet Ado qui sera utilisé pour se connecter à la base de données //et y accéder
@@ -285,7 +287,7 @@ namespace GestionEquipeHockey.Formulaires
             //this.datagridview.headercolumn kek choses pour changer titre colomn
 
 
-
+         
             //Mettre les valeurs entrées par l'utilisateur dans l'objet DataRow UnEtudiant
             try
             {

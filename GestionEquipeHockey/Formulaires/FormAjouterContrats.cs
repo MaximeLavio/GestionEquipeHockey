@@ -14,6 +14,7 @@ namespace GestionEquipeHockey.Formulaires
 {
     public partial class FormAjouterContrats : Form
     {
+
         public FormAjouterContrats()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace GestionEquipeHockey.Formulaires
         /// </summary>
         public void ClearChamps()
         {
+            txtCode_joueur.Text = "";
+            txtCode_gardien.Text = "";
             txtNumContrat.Text = "";
             dtpDebutContrat.Text = "";
             dtpFinContrat.Text = "";
@@ -36,52 +39,57 @@ namespace GestionEquipeHockey.Formulaires
         /// Méthode qui sert à confirmer si le code du joueur existe et fait partit de l'équipe
         /// </summary>
         /// <param name="code"></param>
-        public void VerifCode(string code)
+        public void VerifCodeJoueurs(string code)
+        {          
+            Joueurs_avant joue = null;
+            foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
+            {
+                if (joueur.Code_Joueur != code)
+                {
+                    MessageBox.Show("Le code joueur n'existe pas", "Error");
+                    joue = joueur;
+                }
+            }
+            Contrats obj2 = null;
+            foreach (Contrats cont in Classe_statique.listContrats)
+            {
+                if (cont.Code_Joueur == txtCode_joueur.Text)
+                {
+                    MessageBox.Show("Ce joueur a déja un contrat", "Error");
+                    obj2 = cont;
+                }
+            }
+            if (joue == null && obj2 == null)
+            {
+                btnConfirmerContrat.Enabled = true;
+                txtCode_gardien.Text = "";
+            }
+        }
+
+        public void VerifCodeGardiens(string code)
         {
             Gardiens_but obj = null;
             foreach (Gardiens_but gardien in Classe_statique.listGardiens)
             {
-                if (gardien.Code_Joueur == code)
+                if (gardien.Code_Joueur != code)
                 {
                     obj = gardien;
-                    btnConfirmerContrat.Enabled = true;
+                    MessageBox.Show("Le code joueur n'existe pas", "Error");               
                 }
             }
-            Joueurs_avant joue = null;
-            foreach (Joueurs_avant joueur in Classe_statique.listJoueurs)
+            Contrats obj2 = null;
+            foreach (Contrats cont in Classe_statique.listContrats)
             {
-                if (joueur.Code_Joueur == code)
+                if (cont.Code_Gardien == txtCode_gardien.Text)
                 {
-                    joue = joueur;
-                    btnConfirmerContrat.Enabled = true;
+                    MessageBox.Show("Ce joueur a déja un contrat", "Error");
+                    obj2 = cont;
                 }
             }
-            if (joue == null && obj == null)
+            if (obj == null && obj2 == null)
             {
-                MessageBox.Show("Le code joueur n'existe pas", "Error");
-            }
-        }
-
-
-
-        /// <summary>
-        /// Bouton qui confirme la gestion d'erreur pour le code du joueur
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnContinuer_Click(object sender, EventArgs e)
-        {
-            // Vérifier si le code du joueur est chiffre de longeur 5
-            // Sinon Message d'erreur
-            Regex regex_code = new Regex("^[0-9]{5}$");
-            bool re_code = regex_code.IsMatch(txtCode_joueur.Text);
-            if (re_code)
-            {
-                VerifCode(txtCode_joueur.Text);
-            }
-            else
-            {
-                MessageBox.Show("Le code du joueur doit être composé de 5 chiffres.", "Error");
+                btnConfirmerContrat.Enabled = true;
+                txtCode_joueur.Text = "";
             }
         }
 
@@ -95,6 +103,7 @@ namespace GestionEquipeHockey.Formulaires
         private void FormAjouterContrats_Load(object sender, EventArgs e)
         {
             btnConfirmerContrat.Enabled = false;
+            checkJoueurs.Checked = true;
         }
 
 
@@ -122,6 +131,7 @@ namespace GestionEquipeHockey.Formulaires
                 valid = false;
             }
 
+           
             // Vérifier la date de début et de fin 
             // Sinon message erreur
             if (Classe_statique.Dure(dtpDebutContrat.Value, dtpFinContrat.Value) > 0)
@@ -170,15 +180,110 @@ namespace GestionEquipeHockey.Formulaires
         {
             if (VérificationChamps())
             {
-                Contrats contrat = new Contrats();
-                contrat.Num_Contrat = txtNumContrat.Text;
-                contrat.Date_Debut = dtpDebutContrat.Value;
-                contrat.Date_Fin = dtpFinContrat.Value;
-                contrat.Montant_Annuel = float.Parse(txtMontantAnnuel.Text);
-                contrat.Code_Joueur = txtCode_joueur.Text;
-                Classe_statique.listContrats.Add(contrat);
-                ClearChamps();
+                // Vérifier si le numéro du contrat n'existe pas déja -> Message d'erreur
+                // Sinon création du contrat
+                Contrats obj = null;
+                foreach (Contrats cont in Classe_statique.listContrats)
+                {
+                    if (cont.Num_Contrat == txtNumContrat.Text)
+                    {
+                        MessageBox.Show("Ce numéro de contrat existe déja", "Error");
+                        obj = cont;
+                    }
+                }
+                if (obj == null)
+                {
+                    Contrats contrat = new Contrats();
+                    contrat.Num_Contrat = txtNumContrat.Text;
+                    contrat.Date_Debut = dtpDebutContrat.Value;
+                    contrat.Date_Fin = dtpFinContrat.Value;
+                    contrat.Montant_Annuel = float.Parse(txtMontantAnnuel.Text);
+                    contrat.Code_Joueur = txtCode_joueur.Text;
+                    contrat.Code_Gardien = txtCode_gardien.Text;
+                    Classe_statique.listContrats.Add(contrat);
+                    ClearChamps();
+                    btnConfirmerContrat.Enabled = false;
+                }         
             }  
+        }
+
+        /// <summary>
+        /// Bouton qui confirme la gestion d'erreur pour le code du joueur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCodeJoueurContinuer_Click(object sender, EventArgs e)
+        {
+                // Vérifier si le code du joueur est chiffre de longeur 5
+                // Sinon Message d'erreur
+                Regex regex_code = new Regex("^[0-9]{5}$");
+                bool re_code = regex_code.IsMatch(txtCode_joueur.Text);
+                if (re_code)
+                {
+                        VerifCodeJoueurs(txtCode_joueur.Text);                    
+                }
+                else
+                {
+                    MessageBox.Show("Le code du joueur doit être composé de 5 chiffres.", "Error");
+                }
+        }
+
+        private void btnCodeGardiensContinuer_Click(object sender, EventArgs e)
+        {
+            // Vérifier si le code du joueur est chiffre de longeur 5
+            // Sinon Message d'erreur
+            Regex regex_code = new Regex("^[0-9]{5}$");
+            bool re_code = regex_code.IsMatch(txtCode_gardien.Text);
+            if (re_code)
+            {
+                    VerifCodeGardiens(txtCode_gardien.Text);                              
+            }
+            else
+            {
+                MessageBox.Show("Le code du joueur doit être composé de 5 chiffres.", "Error");
+            }
+        }
+
+        private void checkJoueurs_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkJoueurs.Checked)
+            {
+                checkGardiens.Checked = false;
+                txtCode_gardien.Enabled = false;
+                btnCodeGardiensContinuer.Enabled = false;
+                txtCode_joueur.Enabled = true;
+            }
+            else 
+            {
+                checkGardiens.Checked = true;
+                txtCode_gardien.Enabled = true;
+                checkJoueurs.Checked = false;
+                txtCode_joueur.Enabled = false;
+                btnCodeGardiensContinuer.Enabled = true;
+                btnCodeJoueurContinuer.Enabled = false;
+            }
+            
+           
+        }
+
+        private void checkGardiens_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkGardiens.Checked)
+            {              
+                txtCode_gardien.Enabled = true;
+                checkJoueurs.Checked = false;
+                btnCodeJoueurContinuer.Enabled = false;
+                txtCode_joueur.Enabled = false;
+            }
+            else
+            {
+                checkGardiens.Checked = false;
+                txtCode_gardien.Enabled = false;
+                btnCodeGardiensContinuer.Enabled = false;
+                checkJoueurs.Checked = true;
+                txtCode_joueur.Enabled = true;
+                btnCodeJoueurContinuer.Enabled = true;
+            }
         }
     }
 }

@@ -14,16 +14,18 @@ namespace GestionEquipeHockey.Formulaires
 {
     public partial class FormAjouterJoueurs : Form
     {
+    
         public FormAjouterJoueurs()
         {
-            InitializeComponent();
+            InitializeComponent();       
         }
-
+    
         /// <summary>
         /// Méthode pour réinitialiser les champs des formulaires
         /// </summary>
         public void ClearChamps()
         {
+            txtAjoutCode_joueur.Text = "";
             txtNomJoueur.Text = "";
             txtPrenomJoueur.Text = "";
             dtpDateNaissance.Text = default;
@@ -153,13 +155,13 @@ namespace GestionEquipeHockey.Formulaires
             {
                 if (VérificationChamps())
                 {
-                    /*Gardiens_but obj = null;
-                    foreach (Gardiens_but gr in Classe_statique.listGardiens)
+                    Gardiens_but obj = null;
+                    foreach (Gardiens_but gard in Classe_statique.listGardiens)
                     {
-                        if (gr.Code_Joueur == txtAjoutCode_joueur.Text)
+                        if (gard.Code_Joueur == txtAjoutCode_joueur.Text)
                         {
-                            MessageBox.Show("Le joueur existe déja", "Error");
-                            obj = gr;
+                            MessageBox.Show("Un joueur avec ce code existe déja", "Error");
+                            obj = gard;
                         }
                     }
                     if (obj == null)
@@ -175,19 +177,7 @@ namespace GestionEquipeHockey.Formulaires
                         gardien.Cote = comboBoxCote.Text;
                         Classe_statique.listGardiens.Add(gardien);
                         ClearChamps();
-                    }*/
-                    Gardiens_but gardien = new Gardiens_but();
-                    gardien.Code_Joueur = txtAjoutCode_joueur.Text;
-                    gardien.Nom_Joueur = txtNomJoueur.Text;
-                    gardien.Prenom_Joueur = txtPrenomJoueur.Text;
-                    gardien.Date_naissance = dtpDateNaissance.Value;
-                    gardien.Poids = float.Parse(txtPoids.Text);
-                    gardien.Taille = float.Parse(txtTaille.Text);
-                    gardien.Numero = Convert.ToInt16(numUpDownNumero.Value);
-                    gardien.Cote = comboBoxCote.Text;
-                    Classe_statique.listGardiens.Add(gardien);
-                    ClearChamps();
-
+                    }                
                 }
                 
             }
@@ -195,19 +185,36 @@ namespace GestionEquipeHockey.Formulaires
             {
                 if (VérificationChamps())
                 {
-                    Joueurs_avant joueur = new Joueurs_avant();
-                    joueur.Code_Joueur = txtAjoutCode_joueur.Text;
-                    joueur.Nom_Joueur = txtNomJoueur.Text;
-                    joueur.Prenom_Joueur = txtPrenomJoueur.Text;
-                    joueur.Date_naissance = dtpDateNaissance.Value;
-                    joueur.Poids = float.Parse(txtPoids.Text);
-                    joueur.Taille = float.Parse(txtTaille.Text);
-                    joueur.Numero = Convert.ToInt16(numUpDownNumero.Value);
-                    joueur.Cote = comboBoxCote.Text;
-                    Classe_statique.listJoueurs.Add(joueur);
-                    ClearChamps();
+                    Joueurs_avant obj = null;
+                    foreach (Joueurs_avant joue in Classe_statique.listJoueurs)
+                    {
+                        if (joue.Code_Joueur == txtAjoutCode_joueur.Text)
+                        {
+                            MessageBox.Show("Un joueur avec ce code existe déja", "Error");
+                            obj = joue;
+                        }
+                    }
+                    if (obj == null)
+                    {
+                        Joueurs_avant joueur = new Joueurs_avant();
+                        joueur.Code_Joueur = txtAjoutCode_joueur.Text;
+                        joueur.Nom_Joueur = txtNomJoueur.Text;
+                        joueur.Prenom_Joueur = txtPrenomJoueur.Text;
+                        joueur.Date_naissance = dtpDateNaissance.Value;
+                        joueur.Poids = float.Parse(txtPoids.Text);
+                        joueur.Taille = float.Parse(txtTaille.Text);
+                        joueur.Numero = Convert.ToInt16(numUpDownNumero.Value);
+                        joueur.Cote = comboBoxCote.Text;
+                        Classe_statique.listJoueurs.Add(joueur);
+                        ClearChamps();
+                    }            
                 }          
             }            
-        } 
+        }
+
+        private void FormAjouterJoueurs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

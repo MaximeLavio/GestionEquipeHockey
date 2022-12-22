@@ -31,7 +31,7 @@
             this.lblTitreAjouterContrats = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCode_joueur = new System.Windows.Forms.TextBox();
-            this.btnContinuer = new System.Windows.Forms.Button();
+            this.btnCodeJoueurContinuer = new System.Windows.Forms.Button();
             this.lblNumContrat = new System.Windows.Forms.Label();
             this.lblMontantAnnuel = new System.Windows.Forms.Label();
             this.lblFinContrat = new System.Windows.Forms.Label();
@@ -41,6 +41,10 @@
             this.dtpDebutContrat = new System.Windows.Forms.DateTimePicker();
             this.dtpFinContrat = new System.Windows.Forms.DateTimePicker();
             this.btnConfirmerContrat = new System.Windows.Forms.Button();
+            this.checkJoueurs = new System.Windows.Forms.CheckBox();
+            this.checkGardiens = new System.Windows.Forms.CheckBox();
+            this.btnCodeGardiensContinuer = new System.Windows.Forms.Button();
+            this.txtCode_gardien = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitreAjouterContrats
@@ -57,36 +61,36 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(232, 128);
+            this.label1.Location = new System.Drawing.Point(285, 132);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 16);
+            this.label1.Size = new System.Drawing.Size(454, 16);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Code du joueur à qui donner le contrat";
+            this.label1.Text = "**Entrer le code du joueur ou du gardien à qui vous voulez donner un contrat";
             // 
             // txtCode_joueur
             // 
-            this.txtCode_joueur.Location = new System.Drawing.Point(491, 124);
+            this.txtCode_joueur.Location = new System.Drawing.Point(390, 163);
             this.txtCode_joueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode_joueur.Name = "txtCode_joueur";
             this.txtCode_joueur.Size = new System.Drawing.Size(200, 22);
             this.txtCode_joueur.TabIndex = 10;
             // 
-            // btnContinuer
+            // btnCodeJoueurContinuer
             // 
-            this.btnContinuer.Location = new System.Drawing.Point(724, 123);
-            this.btnContinuer.Margin = new System.Windows.Forms.Padding(4);
-            this.btnContinuer.Name = "btnContinuer";
-            this.btnContinuer.Size = new System.Drawing.Size(100, 28);
-            this.btnContinuer.TabIndex = 11;
-            this.btnContinuer.Text = "Continuer";
-            this.btnContinuer.UseVisualStyleBackColor = true;
-            this.btnContinuer.Click += new System.EventHandler(this.btnContinuer_Click);
+            this.btnCodeJoueurContinuer.Location = new System.Drawing.Point(608, 160);
+            this.btnCodeJoueurContinuer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCodeJoueurContinuer.Name = "btnCodeJoueurContinuer";
+            this.btnCodeJoueurContinuer.Size = new System.Drawing.Size(100, 28);
+            this.btnCodeJoueurContinuer.TabIndex = 11;
+            this.btnCodeJoueurContinuer.Text = "Continuer";
+            this.btnCodeJoueurContinuer.UseVisualStyleBackColor = true;
+            this.btnCodeJoueurContinuer.Click += new System.EventHandler(this.btnCodeJoueurContinuer_Click);
             // 
             // lblNumContrat
             // 
             this.lblNumContrat.AutoSize = true;
-            this.lblNumContrat.Location = new System.Drawing.Point(368, 236);
+            this.lblNumContrat.Location = new System.Drawing.Point(316, 296);
             this.lblNumContrat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumContrat.Name = "lblNumContrat";
             this.lblNumContrat.Size = new System.Drawing.Size(116, 16);
@@ -96,7 +100,7 @@
             // lblMontantAnnuel
             // 
             this.lblMontantAnnuel.AutoSize = true;
-            this.lblMontantAnnuel.Location = new System.Drawing.Point(368, 368);
+            this.lblMontantAnnuel.Location = new System.Drawing.Point(316, 428);
             this.lblMontantAnnuel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontantAnnuel.Name = "lblMontantAnnuel";
             this.lblMontantAnnuel.Size = new System.Drawing.Size(97, 16);
@@ -106,7 +110,7 @@
             // lblFinContrat
             // 
             this.lblFinContrat.AutoSize = true;
-            this.lblFinContrat.Location = new System.Drawing.Point(368, 327);
+            this.lblFinContrat.Location = new System.Drawing.Point(316, 387);
             this.lblFinContrat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinContrat.Name = "lblFinContrat";
             this.lblFinContrat.Size = new System.Drawing.Size(86, 16);
@@ -116,7 +120,7 @@
             // lblDebutContrat
             // 
             this.lblDebutContrat.AutoSize = true;
-            this.lblDebutContrat.Location = new System.Drawing.Point(368, 282);
+            this.lblDebutContrat.Location = new System.Drawing.Point(316, 342);
             this.lblDebutContrat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDebutContrat.Name = "lblDebutContrat";
             this.lblDebutContrat.Size = new System.Drawing.Size(104, 16);
@@ -125,7 +129,7 @@
             // 
             // txtNumContrat
             // 
-            this.txtNumContrat.Location = new System.Drawing.Point(491, 236);
+            this.txtNumContrat.Location = new System.Drawing.Point(439, 296);
             this.txtNumContrat.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumContrat.Name = "txtNumContrat";
             this.txtNumContrat.Size = new System.Drawing.Size(200, 22);
@@ -133,7 +137,7 @@
             // 
             // txtMontantAnnuel
             // 
-            this.txtMontantAnnuel.Location = new System.Drawing.Point(491, 368);
+            this.txtMontantAnnuel.Location = new System.Drawing.Point(439, 428);
             this.txtMontantAnnuel.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontantAnnuel.Name = "txtMontantAnnuel";
             this.txtMontantAnnuel.Size = new System.Drawing.Size(200, 22);
@@ -141,7 +145,7 @@
             // 
             // dtpDebutContrat
             // 
-            this.dtpDebutContrat.Location = new System.Drawing.Point(491, 282);
+            this.dtpDebutContrat.Location = new System.Drawing.Point(439, 342);
             this.dtpDebutContrat.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDebutContrat.Name = "dtpDebutContrat";
             this.dtpDebutContrat.Size = new System.Drawing.Size(200, 22);
@@ -149,7 +153,7 @@
             // 
             // dtpFinContrat
             // 
-            this.dtpFinContrat.Location = new System.Drawing.Point(491, 327);
+            this.dtpFinContrat.Location = new System.Drawing.Point(439, 387);
             this.dtpFinContrat.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFinContrat.Name = "dtpFinContrat";
             this.dtpFinContrat.Size = new System.Drawing.Size(200, 22);
@@ -157,7 +161,7 @@
             // 
             // btnConfirmerContrat
             // 
-            this.btnConfirmerContrat.Location = new System.Drawing.Point(539, 427);
+            this.btnConfirmerContrat.Location = new System.Drawing.Point(485, 487);
             this.btnConfirmerContrat.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmerContrat.Name = "btnConfirmerContrat";
             this.btnConfirmerContrat.Size = new System.Drawing.Size(100, 28);
@@ -166,11 +170,56 @@
             this.btnConfirmerContrat.UseVisualStyleBackColor = true;
             this.btnConfirmerContrat.Click += new System.EventHandler(this.btnConfirmerContrat_Click);
             // 
+            // checkJoueurs
+            // 
+            this.checkJoueurs.AutoSize = true;
+            this.checkJoueurs.Location = new System.Drawing.Point(288, 165);
+            this.checkJoueurs.Name = "checkJoueurs";
+            this.checkJoueurs.Size = new System.Drawing.Size(77, 20);
+            this.checkJoueurs.TabIndex = 22;
+            this.checkJoueurs.Text = "Joueurs";
+            this.checkJoueurs.UseVisualStyleBackColor = true;
+            this.checkJoueurs.CheckedChanged += new System.EventHandler(this.checkJoueurs_CheckedChanged);
+            // 
+            // checkGardiens
+            // 
+            this.checkGardiens.AutoSize = true;
+            this.checkGardiens.Location = new System.Drawing.Point(288, 206);
+            this.checkGardiens.Name = "checkGardiens";
+            this.checkGardiens.Size = new System.Drawing.Size(84, 20);
+            this.checkGardiens.TabIndex = 23;
+            this.checkGardiens.Text = "Gardiens";
+            this.checkGardiens.UseVisualStyleBackColor = true;
+            this.checkGardiens.CheckedChanged += new System.EventHandler(this.checkGardiens_CheckedChanged);
+            // 
+            // btnCodeGardiensContinuer
+            // 
+            this.btnCodeGardiensContinuer.Location = new System.Drawing.Point(608, 203);
+            this.btnCodeGardiensContinuer.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCodeGardiensContinuer.Name = "btnCodeGardiensContinuer";
+            this.btnCodeGardiensContinuer.Size = new System.Drawing.Size(100, 28);
+            this.btnCodeGardiensContinuer.TabIndex = 25;
+            this.btnCodeGardiensContinuer.Text = "Continuer";
+            this.btnCodeGardiensContinuer.UseVisualStyleBackColor = true;
+            this.btnCodeGardiensContinuer.Click += new System.EventHandler(this.btnCodeGardiensContinuer_Click);
+            // 
+            // txtCode_gardien
+            // 
+            this.txtCode_gardien.Location = new System.Drawing.Point(390, 206);
+            this.txtCode_gardien.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCode_gardien.Name = "txtCode_gardien";
+            this.txtCode_gardien.Size = new System.Drawing.Size(200, 22);
+            this.txtCode_gardien.TabIndex = 24;
+            // 
             // FormAjouterContrats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnCodeGardiensContinuer);
+            this.Controls.Add(this.txtCode_gardien);
+            this.Controls.Add(this.checkGardiens);
+            this.Controls.Add(this.checkJoueurs);
             this.Controls.Add(this.btnConfirmerContrat);
             this.Controls.Add(this.dtpFinContrat);
             this.Controls.Add(this.dtpDebutContrat);
@@ -180,7 +229,7 @@
             this.Controls.Add(this.lblFinContrat);
             this.Controls.Add(this.lblMontantAnnuel);
             this.Controls.Add(this.lblNumContrat);
-            this.Controls.Add(this.btnContinuer);
+            this.Controls.Add(this.btnCodeJoueurContinuer);
             this.Controls.Add(this.txtCode_joueur);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitreAjouterContrats);
@@ -198,7 +247,7 @@
         private System.Windows.Forms.Label lblTitreAjouterContrats;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCode_joueur;
-        private System.Windows.Forms.Button btnContinuer;
+        private System.Windows.Forms.Button btnCodeJoueurContinuer;
         private System.Windows.Forms.Label lblNumContrat;
         private System.Windows.Forms.Label lblMontantAnnuel;
         private System.Windows.Forms.Label lblFinContrat;
@@ -208,5 +257,9 @@
         private System.Windows.Forms.DateTimePicker dtpDebutContrat;
         private System.Windows.Forms.DateTimePicker dtpFinContrat;
         private System.Windows.Forms.Button btnConfirmerContrat;
+        private System.Windows.Forms.CheckBox checkJoueurs;
+        private System.Windows.Forms.CheckBox checkGardiens;
+        private System.Windows.Forms.Button btnCodeGardiensContinuer;
+        private System.Windows.Forms.TextBox txtCode_gardien;
     }
 }

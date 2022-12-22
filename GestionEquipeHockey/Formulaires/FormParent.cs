@@ -18,29 +18,7 @@ namespace GestionEquipeHockey.Formulaires
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Lors du click sur ce bouton envoie au formulaire Pour ajouter des joueurs
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formulaires.FormAjouterJoueurs f = new Formulaires.FormAjouterJoueurs();
-            f.MdiParent = this;
-            f.Show();
-        }
-
-        /// <summary>
-        /// Lors du click sur ce bouton envoie au formulaire Pour ajouter des contrats
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void contratsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Formulaires.FormAjouterContrats f = new Formulaires.FormAjouterContrats();
-            f.MdiParent = this;
-            f.Show();
-        }
+      
 
         /// <summary>
         /// Lors du click sur ce bouton envoie au formulaire Pour afficher les contrats
@@ -74,6 +52,31 @@ namespace GestionEquipeHockey.Formulaires
         private void gardiensToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Formulaires.FormAfficherGardiens f = new Formulaires.FormAfficherGardiens();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour ajouter des joueurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void joueursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formulaires.FormAjouterJoueurs f = new Formulaires.FormAjouterJoueurs();
+            f.MdiParent = this;
+            f.Show();
+        }
+
+        /// <summary>
+        /// Lors du click sur ce bouton envoie au formulaire Pour ajouter des contrats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void contratsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Formulaires.FormAjouterContrats f = new Formulaires.FormAjouterContrats();
             f.MdiParent = this;
             f.Show();
         }

@@ -158,8 +158,7 @@
             // 
             this.comboBoxPosition.FormattingEnabled = true;
             this.comboBoxPosition.Items.AddRange(new object[] {
-            "Attaquant",
-            "Défenseur"});
+            "Gardien"});
             this.comboBoxPosition.Location = new System.Drawing.Point(175, 424);
             this.comboBoxPosition.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxPosition.Name = "comboBoxPosition";

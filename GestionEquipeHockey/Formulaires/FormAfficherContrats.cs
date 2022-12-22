@@ -78,6 +78,7 @@ namespace GestionEquipeHockey.Formulaires
                     DataRow UnContrat = Ado.DtContrats.NewRow();
 
                     UnContrat[0] = contrat.Code_Joueur;
+                    UnContrat[1] = contrat.Code_Gardien;
                     UnContrat[2] = contrat.Num_Contrat;
                     UnContrat[3] = contrat.Date_Debut;
                     UnContrat[4] = contrat.Date_Fin;

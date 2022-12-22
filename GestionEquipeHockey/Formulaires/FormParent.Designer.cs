@@ -31,17 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormParent));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.joueursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gardiensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.contratsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.joueursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,20 +67,6 @@
             this.gestionToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.gestionToolStripMenuItem.Text = "Ajouter";
             // 
-            // joueursToolStripMenuItem
-            // 
-            this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.joueursToolStripMenuItem.Text = "Joueurs";
-            this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
-            // 
-            // contratsToolStripMenuItem
-            // 
-            this.contratsToolStripMenuItem.Name = "contratsToolStripMenuItem";
-            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.contratsToolStripMenuItem.Text = "Contrats";
-            this.contratsToolStripMenuItem.Click += new System.EventHandler(this.contratsToolStripMenuItem_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -98,13 +83,12 @@
             this.affichageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.joueursToolStripMenuItem1,
             this.gardiensToolStripMenuItem,
-            this.toolStripSeparator4,
             this.contratsToolStripMenuItem1,
             this.toolStripSeparator3,
             this.quitterToolStripMenuItem1});
             this.affichageToolStripMenuItem.Name = "affichageToolStripMenuItem";
-            this.affichageToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
-            this.affichageToolStripMenuItem.Text = "Affichage";
+            this.affichageToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.affichageToolStripMenuItem.Text = "Affichage/Modification";
             // 
             // joueursToolStripMenuItem1
             // 
@@ -119,11 +103,6 @@
             this.gardiensToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gardiensToolStripMenuItem.Text = "Gardiens";
             this.gardiensToolStripMenuItem.Click += new System.EventHandler(this.gardiensToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(221, 6);
             // 
             // contratsToolStripMenuItem1
             // 
@@ -142,6 +121,20 @@
             this.quitterToolStripMenuItem1.Name = "quitterToolStripMenuItem1";
             this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.quitterToolStripMenuItem1.Text = "Quitter";
+            // 
+            // joueursToolStripMenuItem
+            // 
+            this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
+            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.joueursToolStripMenuItem.Text = "Joueurs";
+            this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
+            // 
+            // contratsToolStripMenuItem
+            // 
+            this.contratsToolStripMenuItem.Name = "contratsToolStripMenuItem";
+            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.contratsToolStripMenuItem.Text = "Contrats";
+            this.contratsToolStripMenuItem.Click += new System.EventHandler(this.contratsToolStripMenuItem_Click);
             // 
             // FormParent
             // 
@@ -170,13 +163,12 @@
         private System.Windows.Forms.ToolStripMenuItem affichageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem joueursToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem contratsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem joueursToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gardiensToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contratsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem joueursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contratsToolStripMenuItem;
     }
 }
