@@ -176,6 +176,7 @@ namespace GestionEquipeHockey.Formulaires
                         gardien.Numero = Convert.ToInt16(numUpDownNumero.Value);
                         gardien.Cote = comboBoxCote.Text;
                         Classe_statique.listGardiens.Add(gardien);
+                        MessageBox.Show("Gardien ajouter avec succès!", "Succès");
                         ClearChamps();
                     }                
                 }
@@ -206,6 +207,7 @@ namespace GestionEquipeHockey.Formulaires
                         joueur.Numero = Convert.ToInt16(numUpDownNumero.Value);
                         joueur.Cote = comboBoxCote.Text;
                         Classe_statique.listJoueurs.Add(joueur);
+                        MessageBox.Show("Joueur ajouter avec succès!", "Succès");
                         ClearChamps();
                     }            
                 }          

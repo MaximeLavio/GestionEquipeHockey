@@ -48,23 +48,30 @@ namespace GestionEquipeHockey.Formulaires
         /// <param name="numero"></param>
         public void Modifsupprimer(string numero)
         {
-            //Parcourir les lignes de la table
-            foreach (DataRow row in Ado.DtGardiens.Rows)
+            try
             {
-                //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
-                if (row[0].ToString().Equals(numero))
-                    row.Delete();
-            }
-            Gardiens_but obj = null;
-            foreach (Gardiens_but gardien in Classe_statique.listGardiens)
-            {
-                if (gardien.Code_Joueur == numero)
+                //Parcourir les lignes de la table
+                foreach (DataRow row in Ado.DtGardiens.Rows)
                 {
-                    obj = gardien;
+                    //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
+                    if (row[0].ToString().Equals(numero))
+                        row.Delete();
                 }
+                Gardiens_but obj = null;
+                foreach (Gardiens_but gardien in Classe_statique.listGardiens)
+                {
+                    if (gardien.Code_Joueur == numero)
+                    {
+                        obj = gardien;
+                    }
+                }
+                Classe_statique.listGardiens.Remove(obj);
             }
-            Classe_statique.listGardiens.Remove(obj);
-        }
+            catch
+            {
+                MessageBox.Show("Veuillez dabord faire une sauvegarde avant de modifier le joueur");
+            }
+         }
 
 
         /// <summary>
@@ -321,6 +328,7 @@ namespace GestionEquipeHockey.Formulaires
                 //Appeler la méthode Update de l’adapteur.
                 //Elle prend en paramètres le DataSet, et le nom de la table.	
                 Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtGardiens.ToString());
+                MessageBox.Show("Sauvegarde complété", "Sauvegarder");
             }
             catch (Exception ex)
             {
@@ -354,6 +362,7 @@ namespace GestionEquipeHockey.Formulaires
                 joueur.Nb_Arrets = Convert.ToInt16(txtNb_arrets.Text);
                 joueur.Nb_Tire_Recus = Convert.ToInt16(txtTires_recus.Text);
                 Classe_statique.listGardiens.Add(joueur);
+                MessageBox.Show("Gardien modifié avec succès!", "Succès");
                 ClearChamps();
             }
         }
@@ -376,7 +385,14 @@ namespace GestionEquipeHockey.Formulaires
                     {
                         //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
                         if (row[0].ToString().Equals(txtCode_joueur.Text.Trim()))
+                        {
                             row.Delete();
+                            MessageBox.Show("Gardien supprimer avec succès!", "Succès");
+                            btnModifier.Enabled = false;
+                            btnSupprimer.Enabled = false;
+                            ClearChamps();
+                        }
+                                                     
                     }
                     catch
                     {

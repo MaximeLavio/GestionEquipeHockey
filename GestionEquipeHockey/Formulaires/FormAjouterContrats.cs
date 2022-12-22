@@ -201,6 +201,7 @@ namespace GestionEquipeHockey.Formulaires
                     contrat.Code_Joueur = txtCode_joueur.Text;
                     contrat.Code_Gardien = txtCode_gardien.Text;
                     Classe_statique.listContrats.Add(contrat);
+                    MessageBox.Show("Contrat attribué au joueur avec succès!", "Succès");
                     ClearChamps();
                     btnConfirmerContrat.Enabled = false;
                 }         

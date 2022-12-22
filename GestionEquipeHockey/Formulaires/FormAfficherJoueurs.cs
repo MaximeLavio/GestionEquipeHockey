@@ -353,6 +353,7 @@ namespace GestionEquipeHockey.Formulaires
                     joueur.Nb_Passes = Convert.ToInt16(txtNb_passes.Text);
                     joueur.Nb_Mises_Echec = Convert.ToInt16(txtMises_echec.Text);
                     Classe_statique.listJoueurs.Add(joueur);
+                    MessageBox.Show("Joueur modifié avec succès!", "Succès");
                     ClearChamps();
                 }
 
@@ -376,6 +377,7 @@ namespace GestionEquipeHockey.Formulaires
                 //Appeler la méthode Update de l’adapteur.
                 //Elle prend en paramètres le DataSet, et le nom de la table.	
                 Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtJoueurs.ToString());
+                MessageBox.Show("Sauvegarde complété!", "Sauvegarde");
             }
             catch (Exception ex)
             {
@@ -401,7 +403,13 @@ namespace GestionEquipeHockey.Formulaires
                     {
                         //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
                         if (row[0].ToString().Equals(txtCode_joueur.Text.Trim()))
+                        {
                             row.Delete();
+                            MessageBox.Show("Joueur supprimer avec succès!", "Succès");
+                            btnModifier.Enabled = false;
+                            btnSupprimer.Enabled = false;
+                            ClearChamps();
+                        }                        
                     }
                     catch
                     {

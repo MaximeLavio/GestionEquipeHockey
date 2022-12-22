@@ -67,6 +67,8 @@
             this.btnSauvegarderGardiens = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnContinuergardien = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -110,6 +112,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.btnSupprimer);
             this.panel1.Controls.Add(this.comboBoxPosition);
             this.panel1.Controls.Add(this.lblPosition);
@@ -138,7 +141,7 @@
             this.panel1.Controls.Add(this.lblDateNaissanceJoueur);
             this.panel1.Controls.Add(this.lblPrenomJoueur);
             this.panel1.Controls.Add(this.lblNomJoueur);
-            this.panel1.Location = new System.Drawing.Point(809, 166);
+            this.panel1.Location = new System.Drawing.Point(776, 166);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(796, 486);
             this.panel1.TabIndex = 87;
@@ -376,7 +379,7 @@
             // 
             // txtCode_joueur
             // 
-            this.txtCode_joueur.Location = new System.Drawing.Point(1129, 101);
+            this.txtCode_joueur.Location = new System.Drawing.Point(1046, 103);
             this.txtCode_joueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode_joueur.Name = "txtCode_joueur";
             this.txtCode_joueur.Size = new System.Drawing.Size(200, 22);
@@ -385,7 +388,7 @@
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(991, 104);
+            this.lblCode.Location = new System.Drawing.Point(908, 106);
             this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(98, 16);
@@ -396,12 +399,12 @@
             // 
             this.lblTitreModifierJoueurs.AutoSize = true;
             this.lblTitreModifierJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreModifierJoueurs.Location = new System.Drawing.Point(977, 26);
+            this.lblTitreModifierJoueurs.Location = new System.Drawing.Point(836, 28);
             this.lblTitreModifierJoueurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitreModifierJoueurs.Name = "lblTitreModifierJoueurs";
-            this.lblTitreModifierJoueurs.Size = new System.Drawing.Size(462, 39);
+            this.lblTitreModifierJoueurs.Size = new System.Drawing.Size(688, 39);
             this.lblTitreModifierJoueurs.TabIndex = 83;
-            this.lblTitreModifierJoueurs.Text = "Modifier un joueur de l\'équipe";
+            this.lblTitreModifierJoueurs.Text = "Modifier ou supprimer un gardien de l\'équipe";
             // 
             // lblTitreGardiens
             // 
@@ -429,7 +432,7 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Gardien avec le plus d\'arret",
             "Gardien plus agé"});
-            this.comboBox2.Location = new System.Drawing.Point(230, 42);
+            this.comboBox2.Location = new System.Drawing.Point(381, 46);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(194, 24);
@@ -438,12 +441,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 42);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 16);
+            this.label3.Size = new System.Drawing.Size(345, 25);
             this.label3.TabIndex = 90;
-            this.label3.Text = "Rechercher par catégorie";
+            this.label3.Text = "Rechercher dans la table par catégorie";
             // 
             // btnSauvegarderGardiens
             // 
@@ -457,7 +461,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(453, 38);
+            this.button1.Location = new System.Drawing.Point(421, 78);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 30);
@@ -467,7 +471,7 @@
             // 
             // btnContinuergardien
             // 
-            this.btnContinuergardien.Location = new System.Drawing.Point(1354, 98);
+            this.btnContinuergardien.Location = new System.Drawing.Point(1271, 100);
             this.btnContinuergardien.Margin = new System.Windows.Forms.Padding(4);
             this.btnContinuergardien.Name = "btnContinuergardien";
             this.btnContinuergardien.Size = new System.Drawing.Size(121, 28);
@@ -476,11 +480,37 @@
             this.btnContinuergardien.UseVisualStyleBackColor = true;
             this.btnContinuergardien.Click += new System.EventHandler(this.btnContinuergardien_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Orange;
+            this.label4.Location = new System.Drawing.Point(912, 129);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(336, 16);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "**Pour la supression seulement entrer le code du joueur";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Orange;
+            this.label5.Location = new System.Drawing.Point(31, 505);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(520, 16);
+            this.label5.TabIndex = 95;
+            this.label5.Text = "** Ne pas oublier de sauvegarder pour garder vos ajouts,modifications ou supressi" +
+    "ons";
+            // 
             // FormAfficherGardiens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1630, 744);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnContinuergardien);
             this.Controls.Add(this.btnSauvegarderGardiens);
             this.Controls.Add(this.button1);
@@ -493,7 +523,7 @@
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblTitreModifierJoueurs);
             this.Name = "FormAfficherGardiens";
-            this.Text = "Afficher un gardien";
+            this.Text = "Afficher / Modifier un gardien";
             this.Load += new System.EventHandler(this.FormAfficherGardiens_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -544,5 +574,7 @@
         private System.Windows.Forms.Button btnSauvegarderGardiens;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnContinuergardien;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

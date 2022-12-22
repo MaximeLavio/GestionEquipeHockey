@@ -110,10 +110,11 @@ namespace GestionEquipeHockey.Formulaires
                 //Appeler la méthode Update de l’adapteur.
                 //Elle prend en paramètres le DataSet, et le nom de la table.	
                 Ado.Adapter.Update(Ado.DsGestionHockey, Ado.DtContrats.ToString());
+                MessageBox.Show("Sauvegarde complété!", "Sauvegarde");
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Veuillez d'abord sauvegarder le joueur!");
             }
         }
 
@@ -136,6 +137,7 @@ namespace GestionEquipeHockey.Formulaires
                         //Si on trouve l'étudiant dans la table (on cherche par //numéro d'étudiant)
                         if (row[0].ToString().Equals(txtCode_joueur.Text.Trim()))
                             row.Delete();
+                            MessageBox.Show("Contrat supprimer avec succès!", "Succès");
                     }
                     catch
                     {
@@ -315,6 +317,7 @@ namespace GestionEquipeHockey.Formulaires
                 contrat.Montant_Annuel = float.Parse(txtMontantAnnuel.Text);
                 contrat.Code_Joueur = txtCode_joueur.Text;
                 Classe_statique.listContrats.Add(contrat);
+                MessageBox.Show("Contrat modifié avec succès!", "Succès");
                 ClearChamps();
             }
         }
@@ -333,18 +336,34 @@ namespace GestionEquipeHockey.Formulaires
                 //Si le numéro de contrat existe dans la table, Afficher les informations dans un MessageBox. Row[0] correspond au champ Numéro
                 if (row[2].ToString() == txtRecherche.Text)
                     MessageBox.Show("Le code du joueur :  " + row[0] + "\n"
+                                      + "Le code du gardien :  " + row[1] + "\n"
                                       + "Le numéro de contrat : " + row[2] + "\n"
                                       + "La date de début : " + row[3] + "\n"
                                       + "La date de fin: " + row[4] + "\n"
                                       + "Le montant annuel: " + row[5]+ "\n","Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }         
+        }
+
+        private void btnRechercherCodeJoueur_Click(object sender, EventArgs e)
+        {
+            //Parcourir les lignes du DataTable 
+            foreach (DataRow row in Ado.DtContrats.Rows)
+            {
+                //Si le code du joueur existe dans la table, Afficher les informations dans un MessageBox. Row[0] correspond au champ Numéro
+                if (row[0].ToString() == txtCodeJoueurRecherche.Text)
+                    MessageBox.Show("Le code du joueur :  " + row[0] + "\n"                                      
+                                      + "Le numéro de contrat : " + row[2] + "\n"
+                                      + "La date de début : " + row[3] + "\n"
+                                      + "La date de fin: " + row[4] + "\n"
+                                      + "Le montant annuel: " + row[5] + "\n", "Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             //Parcourir les lignes du DataTable 
             foreach (DataRow row in Ado.DtContrats.Rows)
             {
                 //Si le code du joueur existe dans la table, Afficher les informations dans un MessageBox. Row[0] correspond au champ Numéro
-                if (row[0].ToString() == txtCodeJoueurRecherche.Text)
-                    MessageBox.Show("Le code du joueur :  " + row[0] + "\n"
+                if (row[1].ToString() == txtCodeJoueurRecherche.Text)
+                    MessageBox.Show("Le code du gardien :  " + row[1] + "\n"
                                       + "Le numéro de contrat : " + row[2] + "\n"
                                       + "La date de début : " + row[3] + "\n"
                                       + "La date de fin: " + row[4] + "\n"

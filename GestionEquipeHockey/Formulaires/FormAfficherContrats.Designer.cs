@@ -53,6 +53,9 @@
             this.txtRecherche = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodeJoueurRecherche = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnRechercherCodeJoueur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,10 +82,10 @@
             // 
             // btnRechercher
             // 
-            this.btnRechercher.Location = new System.Drawing.Point(574, 86);
+            this.btnRechercher.Location = new System.Drawing.Point(575, 66);
             this.btnRechercher.Margin = new System.Windows.Forms.Padding(4);
             this.btnRechercher.Name = "btnRechercher";
-            this.btnRechercher.Size = new System.Drawing.Size(117, 30);
+            this.btnRechercher.Size = new System.Drawing.Size(117, 27);
             this.btnRechercher.TabIndex = 78;
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = true;
@@ -110,6 +113,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.dtpFinContrat);
             this.panel1.Controls.Add(this.dtpDebutContrat);
             this.panel1.Controls.Add(this.txtMontantAnnuel);
@@ -307,11 +311,49 @@
             this.txtCodeJoueurRecherche.Size = new System.Drawing.Size(200, 22);
             this.txtCodeJoueurRecherche.TabIndex = 87;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Orange;
+            this.label5.Location = new System.Drawing.Point(902, 153);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(336, 16);
+            this.label5.TabIndex = 95;
+            this.label5.Text = "**Pour la supression seulement entrer le code du joueur";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Orange;
+            this.label6.Location = new System.Drawing.Point(113, 618);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(520, 16);
+            this.label6.TabIndex = 96;
+            this.label6.Text = "** Ne pas oublier de sauvegarder pour garder vos ajouts,modifications ou supressi" +
+    "ons";
+            // 
+            // btnRechercherCodeJoueur
+            // 
+            this.btnRechercherCodeJoueur.Location = new System.Drawing.Point(575, 112);
+            this.btnRechercherCodeJoueur.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRechercherCodeJoueur.Name = "btnRechercherCodeJoueur";
+            this.btnRechercherCodeJoueur.Size = new System.Drawing.Size(117, 25);
+            this.btnRechercherCodeJoueur.TabIndex = 97;
+            this.btnRechercherCodeJoueur.Text = "Rechercher";
+            this.btnRechercherCodeJoueur.UseVisualStyleBackColor = true;
+            this.btnRechercherCodeJoueur.Click += new System.EventHandler(this.btnRechercherCodeJoueur_Click);
+            // 
             // FormAfficherContrats
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1497, 797);
+            this.Controls.Add(this.btnRechercherCodeJoueur);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCodeJoueurRecherche);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtRecherche);
@@ -327,7 +369,7 @@
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblTitreContrats);
             this.Name = "FormAfficherContrats";
-            this.Text = "Modifier les informations d\'un contrat";
+            this.Text = "Afficher et Modifier les informations d\'un contrat";
             this.Load += new System.EventHandler(this.FormAfficherContrats_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -363,5 +405,8 @@
         private System.Windows.Forms.TextBox txtRecherche;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodeJoueurRecherche;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnRechercherCodeJoueur;
     }
 }

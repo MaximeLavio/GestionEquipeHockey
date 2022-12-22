@@ -32,7 +32,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnSauvegarderJoueurs = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.lblTitreModifierJoueurs = new System.Windows.Forms.Label();
             this.lblCode = new System.Windows.Forms.Label();
@@ -69,6 +68,9 @@
             this.comboBoxPosition = new System.Windows.Forms.ComboBox();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).BeginInit();
             this.panel1.SuspendLayout();
@@ -96,12 +98,13 @@
             // 
             // btnSauvegarderJoueurs
             // 
+            this.btnSauvegarderJoueurs.BackColor = System.Drawing.Color.Transparent;
             this.btnSauvegarderJoueurs.Location = new System.Drawing.Point(29, 481);
             this.btnSauvegarderJoueurs.Name = "btnSauvegarderJoueurs";
             this.btnSauvegarderJoueurs.Size = new System.Drawing.Size(199, 29);
             this.btnSauvegarderJoueurs.TabIndex = 48;
             this.btnSauvegarderJoueurs.Text = "Sauvegarder modification";
-            this.btnSauvegarderJoueurs.UseVisualStyleBackColor = true;
+            this.btnSauvegarderJoueurs.UseVisualStyleBackColor = false;
             this.btnSauvegarderJoueurs.Click += new System.EventHandler(this.btnSauvegarderJoueurs_Click);
             // 
             // comboBox2
@@ -110,47 +113,38 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Joueur avec le plus de buts",
             "Joueur avec le plus de mises en échec"});
-            this.comboBox2.Location = new System.Drawing.Point(203, 51);
+            this.comboBox2.Location = new System.Drawing.Point(402, 51);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(194, 24);
             this.comboBox2.TabIndex = 47;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 16);
-            this.label1.TabIndex = 46;
-            this.label1.Text = "Rechercher par catégorie";
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(428, 47);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(443, 83);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 30);
             this.button2.TabIndex = 45;
             this.button2.Text = "Afficher";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // lblTitreModifierJoueurs
             // 
             this.lblTitreModifierJoueurs.AutoSize = true;
             this.lblTitreModifierJoueurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreModifierJoueurs.Location = new System.Drawing.Point(930, 28);
+            this.lblTitreModifierJoueurs.Location = new System.Drawing.Point(793, 35);
             this.lblTitreModifierJoueurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitreModifierJoueurs.Name = "lblTitreModifierJoueurs";
-            this.lblTitreModifierJoueurs.Size = new System.Drawing.Size(462, 39);
+            this.lblTitreModifierJoueurs.Size = new System.Drawing.Size(669, 39);
             this.lblTitreModifierJoueurs.TabIndex = 8;
-            this.lblTitreModifierJoueurs.Text = "Modifier un joueur de l\'équipe";
+            this.lblTitreModifierJoueurs.Text = "Modifier ou supprimer un joueur de l\'équipe";
             // 
             // lblCode
             // 
             this.lblCode.AutoSize = true;
-            this.lblCode.Location = new System.Drawing.Point(944, 106);
+            this.lblCode.Location = new System.Drawing.Point(883, 102);
             this.lblCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(98, 16);
@@ -159,7 +153,7 @@
             // 
             // txtCode_joueur
             // 
-            this.txtCode_joueur.Location = new System.Drawing.Point(1082, 103);
+            this.txtCode_joueur.Location = new System.Drawing.Point(1021, 99);
             this.txtCode_joueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode_joueur.Name = "txtCode_joueur";
             this.txtCode_joueur.Size = new System.Drawing.Size(200, 22);
@@ -167,7 +161,7 @@
             // 
             // btnContinuer
             // 
-            this.btnContinuer.Location = new System.Drawing.Point(1315, 102);
+            this.btnContinuer.Location = new System.Drawing.Point(1254, 98);
             this.btnContinuer.Margin = new System.Windows.Forms.Padding(4);
             this.btnContinuer.Name = "btnContinuer";
             this.btnContinuer.Size = new System.Drawing.Size(100, 28);
@@ -464,6 +458,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.btnSupprimer);
             this.panel1.Controls.Add(this.comboBoxPosition);
             this.panel1.Controls.Add(this.lblPosition);
@@ -494,19 +489,56 @@
             this.panel1.Controls.Add(this.lblDateNaissanceJoueur);
             this.panel1.Controls.Add(this.lblPrenomJoueur);
             this.panel1.Controls.Add(this.lblNomJoueur);
-            this.panel1.Location = new System.Drawing.Point(762, 168);
+            this.panel1.Location = new System.Drawing.Point(727, 168);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(796, 486);
             this.panel1.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(345, 25);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Rechercher dans la table par catégorie";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Orange;
+            this.label6.Location = new System.Drawing.Point(888, 125);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(336, 16);
+            this.label6.TabIndex = 95;
+            this.label6.Text = "**Pour la supression seulement entrer le code du joueur";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Orange;
+            this.label7.Location = new System.Drawing.Point(31, 513);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(520, 16);
+            this.label7.TabIndex = 96;
+            this.label7.Text = "** Ne pas oublier de sauvegarder pour garder vos ajouts,modifications ou supressi" +
+    "ons";
             // 
             // FormAfficherJoueurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1600, 758);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSauvegarderJoueurs);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTitreJoueurs);
             this.Controls.Add(this.dataGridView2);
@@ -517,7 +549,7 @@
             this.Controls.Add(this.lblTitreModifierJoueurs);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAfficherJoueurs";
-            this.Text = "Affichage joueurs";
+            this.Text = "Afficher / Modifier un joueurs";
             this.Load += new System.EventHandler(this.FormModifierJoueurs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownNumero)).EndInit();
@@ -533,7 +565,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnSauvegarderJoueurs;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblTitreModifierJoueurs;
         private System.Windows.Forms.Label lblCode;
@@ -570,5 +601,8 @@
         private System.Windows.Forms.ComboBox comboBoxPosition;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
