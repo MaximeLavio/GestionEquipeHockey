@@ -73,16 +73,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 69);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(112, 87);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 32);
+            this.label1.Size = new System.Drawing.Size(307, 50);
             this.label1.TabIndex = 79;
             this.label1.Text = "Rechercher par numéro de contrat\r\n\r\n";
             // 
             // btnRechercher
             // 
-            this.btnRechercher.Location = new System.Drawing.Point(575, 66);
+            this.btnRechercher.Location = new System.Drawing.Point(607, 91);
             this.btnRechercher.Margin = new System.Windows.Forms.Padding(4);
             this.btnRechercher.Name = "btnRechercher";
             this.btnRechercher.Size = new System.Drawing.Size(117, 27);
@@ -268,7 +269,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 215);
+            this.label3.Location = new System.Drawing.Point(113, 234);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 16);
@@ -277,35 +278,36 @@
             // 
             // txtRecherche
             // 
-            this.txtRecherche.Location = new System.Drawing.Point(345, 66);
+            this.txtRecherche.Location = new System.Drawing.Point(442, 91);
             this.txtRecherche.Margin = new System.Windows.Forms.Padding(4);
             this.txtRecherche.Name = "txtRecherche";
-            this.txtRecherche.Size = new System.Drawing.Size(200, 22);
+            this.txtRecherche.Size = new System.Drawing.Size(151, 22);
             this.txtRecherche.TabIndex = 85;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(113, 113);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(112, 160);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(193, 48);
+            this.label4.Size = new System.Drawing.Size(279, 75);
             this.label4.TabIndex = 86;
             this.label4.Text = "Rechercher par code de joueur\r\n\r\n\r\n";
             // 
             // txtCodeJoueurRecherche
             // 
-            this.txtCodeJoueurRecherche.Location = new System.Drawing.Point(345, 113);
+            this.txtCodeJoueurRecherche.Location = new System.Drawing.Point(442, 166);
             this.txtCodeJoueurRecherche.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodeJoueurRecherche.Name = "txtCodeJoueurRecherche";
-            this.txtCodeJoueurRecherche.Size = new System.Drawing.Size(200, 22);
+            this.txtCodeJoueurRecherche.Size = new System.Drawing.Size(151, 22);
             this.txtCodeJoueurRecherche.TabIndex = 87;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Orange;
-            this.label5.Location = new System.Drawing.Point(953, 134);
+            this.label5.Location = new System.Drawing.Point(953, 142);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(336, 16);
@@ -326,7 +328,7 @@
             // 
             // btnRechercherCodeJoueur
             // 
-            this.btnRechercherCodeJoueur.Location = new System.Drawing.Point(575, 112);
+            this.btnRechercherCodeJoueur.Location = new System.Drawing.Point(607, 163);
             this.btnRechercherCodeJoueur.Margin = new System.Windows.Forms.Padding(4);
             this.btnRechercherCodeJoueur.Name = "btnRechercherCodeJoueur";
             this.btnRechercherCodeJoueur.Size = new System.Drawing.Size(117, 25);

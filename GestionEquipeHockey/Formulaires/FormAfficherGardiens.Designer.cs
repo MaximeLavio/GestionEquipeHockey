@@ -62,10 +62,10 @@
             this.lblTitreModifierJoueurs = new System.Windows.Forms.Label();
             this.lblTitreGardiens = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxRecherche = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSauvegarderGardiens = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAfficher = new System.Windows.Forms.Button();
             this.btnContinuergardien = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -426,23 +426,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(607, 290);
             this.dataGridView1.TabIndex = 88;
             // 
-            // comboBox2
+            // comboBoxRecherche
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Gardien avec le plus d\'arret",
-            "Gardien plus agé"});
-            this.comboBox2.Location = new System.Drawing.Point(381, 46);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(194, 24);
-            this.comboBox2.TabIndex = 91;
+            this.comboBoxRecherche.FormattingEnabled = true;
+            this.comboBoxRecherche.Items.AddRange(new object[] {
+            "Plus grand nombre d\'arrets réaliser par un gardien",
+            "Le poids le plus élevé parmis les gardiens",
+            "Le plus grand nombre de matchs joué par un gardien"});
+            this.comboBoxRecherche.Location = new System.Drawing.Point(173, 68);
+            this.comboBoxRecherche.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxRecherche.Name = "comboBoxRecherche";
+            this.comboBoxRecherche.Size = new System.Drawing.Size(340, 24);
+            this.comboBoxRecherche.TabIndex = 91;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(28, 42);
+            this.label3.Location = new System.Drawing.Point(168, 28);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(345, 25);
@@ -459,15 +460,16 @@
             this.btnSauvegarderGardiens.UseVisualStyleBackColor = true;
             this.btnSauvegarderGardiens.Click += new System.EventHandler(this.btnSauvegarderGardiens_Click);
             // 
-            // button1
+            // btnAfficher
             // 
-            this.button1.Location = new System.Drawing.Point(421, 78);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 30);
-            this.button1.TabIndex = 92;
-            this.button1.Text = "Afficher";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAfficher.Location = new System.Drawing.Point(284, 100);
+            this.btnAfficher.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAfficher.Name = "btnAfficher";
+            this.btnAfficher.Size = new System.Drawing.Size(117, 30);
+            this.btnAfficher.TabIndex = 92;
+            this.btnAfficher.Text = "Afficher";
+            this.btnAfficher.UseVisualStyleBackColor = true;
+            this.btnAfficher.Click += new System.EventHandler(this.btnAfficher_Click);
             // 
             // btnContinuergardien
             // 
@@ -513,8 +515,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnContinuergardien);
             this.Controls.Add(this.btnSauvegarderGardiens);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.btnAfficher);
+            this.Controls.Add(this.comboBoxRecherche);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTitreGardiens);
             this.Controls.Add(this.dataGridView1);
@@ -569,10 +571,10 @@
         private System.Windows.Forms.Label lblTitreModifierJoueurs;
         private System.Windows.Forms.Label lblTitreGardiens;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxRecherche;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSauvegarderGardiens;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAfficher;
         private System.Windows.Forms.Button btnContinuergardien;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

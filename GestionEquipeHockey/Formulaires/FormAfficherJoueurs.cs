@@ -459,6 +459,34 @@ namespace GestionEquipeHockey.Formulaires
                 MessageBox.Show(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Liens: https://stackoverflow.com/questions/16558212/how-to-select-max-and-min-value-of-any-column-of-datagridview  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAfficher_Click(object sender, EventArgs e)
+        {
+            if (comboBoxRecherche.Text == "Plus grand nombre de buts fait par un joueur")
+            {
+                var results = Ado.DtJoueurs.AsEnumerable().Max(row => Convert.ToInt32(row["nb_buts"]));
+                MessageBox.Show(Convert.ToString(results + " buts"));
+            }
+            else if (comboBoxRecherche.Text == "Plus grand nombre de mises en échec fait par un joueur")
+            {
+                var results = Ado.DtJoueurs.AsEnumerable().Max(row => Convert.ToInt32(row["nb_mises_echec"]));
+                MessageBox.Show(Convert.ToString(results + " mises en échec"));
+            }
+            else if (comboBoxRecherche.Text == "Plus grand nombre de minutes de punition accumulés par un joueur")
+            {
+                var results = Ado.DtJoueurs.AsEnumerable().Max(row => Convert.ToInt32(row["minutes_punition"]));
+                MessageBox.Show(Convert.ToString(results + " minutes de punition"));
+            }
+            else
+            {
+                MessageBox.Show("Requete introuvable", "Error");
+            }
+        }
     }
 }
 

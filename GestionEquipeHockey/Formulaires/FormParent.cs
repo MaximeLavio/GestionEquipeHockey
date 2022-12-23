@@ -86,5 +86,10 @@ namespace GestionEquipeHockey.Formulaires
         {
             
         }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

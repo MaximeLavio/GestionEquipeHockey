@@ -51,7 +51,7 @@
             // 
             this.lblTitreAjouterContrats.AutoSize = true;
             this.lblTitreAjouterContrats.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitreAjouterContrats.Location = new System.Drawing.Point(267, 54);
+            this.lblTitreAjouterContrats.Location = new System.Drawing.Point(471, 132);
             this.lblTitreAjouterContrats.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitreAjouterContrats.Name = "lblTitreAjouterContrats";
             this.lblTitreAjouterContrats.Size = new System.Drawing.Size(467, 39);
@@ -61,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 132);
+            this.label1.Location = new System.Drawing.Point(489, 210);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(454, 16);
@@ -70,7 +70,7 @@
             // 
             // txtCode_joueur
             // 
-            this.txtCode_joueur.Location = new System.Drawing.Point(390, 163);
+            this.txtCode_joueur.Location = new System.Drawing.Point(594, 241);
             this.txtCode_joueur.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode_joueur.Name = "txtCode_joueur";
             this.txtCode_joueur.Size = new System.Drawing.Size(200, 22);
@@ -78,7 +78,7 @@
             // 
             // btnCodeJoueurContinuer
             // 
-            this.btnCodeJoueurContinuer.Location = new System.Drawing.Point(608, 160);
+            this.btnCodeJoueurContinuer.Location = new System.Drawing.Point(812, 238);
             this.btnCodeJoueurContinuer.Margin = new System.Windows.Forms.Padding(4);
             this.btnCodeJoueurContinuer.Name = "btnCodeJoueurContinuer";
             this.btnCodeJoueurContinuer.Size = new System.Drawing.Size(100, 28);
@@ -90,7 +90,7 @@
             // lblNumContrat
             // 
             this.lblNumContrat.AutoSize = true;
-            this.lblNumContrat.Location = new System.Drawing.Point(316, 296);
+            this.lblNumContrat.Location = new System.Drawing.Point(520, 374);
             this.lblNumContrat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumContrat.Name = "lblNumContrat";
             this.lblNumContrat.Size = new System.Drawing.Size(116, 16);
@@ -100,7 +100,7 @@
             // lblMontantAnnuel
             // 
             this.lblMontantAnnuel.AutoSize = true;
-            this.lblMontantAnnuel.Location = new System.Drawing.Point(316, 428);
+            this.lblMontantAnnuel.Location = new System.Drawing.Point(520, 506);
             this.lblMontantAnnuel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMontantAnnuel.Name = "lblMontantAnnuel";
             this.lblMontantAnnuel.Size = new System.Drawing.Size(97, 16);
@@ -110,7 +110,7 @@
             // lblFinContrat
             // 
             this.lblFinContrat.AutoSize = true;
-            this.lblFinContrat.Location = new System.Drawing.Point(316, 387);
+            this.lblFinContrat.Location = new System.Drawing.Point(520, 465);
             this.lblFinContrat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFinContrat.Name = "lblFinContrat";
             this.lblFinContrat.Size = new System.Drawing.Size(86, 16);
@@ -120,7 +120,7 @@
             // lblDebutContrat
             // 
             this.lblDebutContrat.AutoSize = true;
-            this.lblDebutContrat.Location = new System.Drawing.Point(316, 342);
+            this.lblDebutContrat.Location = new System.Drawing.Point(520, 420);
             this.lblDebutContrat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDebutContrat.Name = "lblDebutContrat";
             this.lblDebutContrat.Size = new System.Drawing.Size(104, 16);
@@ -129,7 +129,7 @@
             // 
             // txtNumContrat
             // 
-            this.txtNumContrat.Location = new System.Drawing.Point(439, 296);
+            this.txtNumContrat.Location = new System.Drawing.Point(643, 374);
             this.txtNumContrat.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumContrat.Name = "txtNumContrat";
             this.txtNumContrat.Size = new System.Drawing.Size(200, 22);
@@ -137,7 +137,7 @@
             // 
             // txtMontantAnnuel
             // 
-            this.txtMontantAnnuel.Location = new System.Drawing.Point(439, 428);
+            this.txtMontantAnnuel.Location = new System.Drawing.Point(643, 506);
             this.txtMontantAnnuel.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontantAnnuel.Name = "txtMontantAnnuel";
             this.txtMontantAnnuel.Size = new System.Drawing.Size(200, 22);
@@ -145,7 +145,7 @@
             // 
             // dtpDebutContrat
             // 
-            this.dtpDebutContrat.Location = new System.Drawing.Point(439, 342);
+            this.dtpDebutContrat.Location = new System.Drawing.Point(643, 420);
             this.dtpDebutContrat.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDebutContrat.Name = "dtpDebutContrat";
             this.dtpDebutContrat.Size = new System.Drawing.Size(200, 22);
@@ -153,7 +153,7 @@
             // 
             // dtpFinContrat
             // 
-            this.dtpFinContrat.Location = new System.Drawing.Point(439, 387);
+            this.dtpFinContrat.Location = new System.Drawing.Point(643, 465);
             this.dtpFinContrat.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFinContrat.Name = "dtpFinContrat";
             this.dtpFinContrat.Size = new System.Drawing.Size(200, 22);
@@ -161,7 +161,7 @@
             // 
             // btnConfirmerContrat
             // 
-            this.btnConfirmerContrat.Location = new System.Drawing.Point(485, 487);
+            this.btnConfirmerContrat.Location = new System.Drawing.Point(689, 565);
             this.btnConfirmerContrat.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmerContrat.Name = "btnConfirmerContrat";
             this.btnConfirmerContrat.Size = new System.Drawing.Size(100, 28);
@@ -173,7 +173,7 @@
             // checkJoueurs
             // 
             this.checkJoueurs.AutoSize = true;
-            this.checkJoueurs.Location = new System.Drawing.Point(288, 165);
+            this.checkJoueurs.Location = new System.Drawing.Point(492, 243);
             this.checkJoueurs.Name = "checkJoueurs";
             this.checkJoueurs.Size = new System.Drawing.Size(77, 20);
             this.checkJoueurs.TabIndex = 22;
@@ -184,7 +184,7 @@
             // checkGardiens
             // 
             this.checkGardiens.AutoSize = true;
-            this.checkGardiens.Location = new System.Drawing.Point(288, 206);
+            this.checkGardiens.Location = new System.Drawing.Point(492, 284);
             this.checkGardiens.Name = "checkGardiens";
             this.checkGardiens.Size = new System.Drawing.Size(84, 20);
             this.checkGardiens.TabIndex = 23;
@@ -194,7 +194,7 @@
             // 
             // btnCodeGardiensContinuer
             // 
-            this.btnCodeGardiensContinuer.Location = new System.Drawing.Point(608, 203);
+            this.btnCodeGardiensContinuer.Location = new System.Drawing.Point(812, 281);
             this.btnCodeGardiensContinuer.Margin = new System.Windows.Forms.Padding(4);
             this.btnCodeGardiensContinuer.Name = "btnCodeGardiensContinuer";
             this.btnCodeGardiensContinuer.Size = new System.Drawing.Size(100, 28);
@@ -205,7 +205,7 @@
             // 
             // txtCode_gardien
             // 
-            this.txtCode_gardien.Location = new System.Drawing.Point(390, 206);
+            this.txtCode_gardien.Location = new System.Drawing.Point(594, 284);
             this.txtCode_gardien.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode_gardien.Name = "txtCode_gardien";
             this.txtCode_gardien.Size = new System.Drawing.Size(200, 22);
@@ -215,7 +215,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(1367, 683);
             this.Controls.Add(this.btnCodeGardiensContinuer);
             this.Controls.Add(this.txtCode_gardien);
             this.Controls.Add(this.checkGardiens);

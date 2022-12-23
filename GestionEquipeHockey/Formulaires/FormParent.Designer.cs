@@ -70,27 +70,28 @@
             // joueursToolStripMenuItem
             // 
             this.joueursToolStripMenuItem.Name = "joueursToolStripMenuItem";
-            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.joueursToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.joueursToolStripMenuItem.Text = "Joueurs";
             this.joueursToolStripMenuItem.Click += new System.EventHandler(this.joueursToolStripMenuItem_Click);
             // 
             // contratsToolStripMenuItem
             // 
             this.contratsToolStripMenuItem.Name = "contratsToolStripMenuItem";
-            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.contratsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.contratsToolStripMenuItem.Text = "Contrats";
             this.contratsToolStripMenuItem.Click += new System.EventHandler(this.contratsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // affichageToolStripMenuItem
             // 
@@ -140,6 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1604, 711);
             this.Controls.Add(this.menuStrip1);
