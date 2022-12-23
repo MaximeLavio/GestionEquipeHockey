@@ -358,6 +358,11 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+        /// <summary>
+        /// Bouton qui permet de faire une recherche selon le code du joueur entrer par l'utilisateur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRechercherCodeJoueur_Click(object sender, EventArgs e)
         {
             //Parcourir les lignes du DataTable 
@@ -384,6 +389,10 @@ namespace GestionEquipeHockey.Formulaires
                                       + "Le montant annuel: " + row[5] + "\n", "Résultat de la recherche", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        /// <summary>
+        /// Bouton qui permet de sauvegarder les modifications apportées
+        /// </summary>
         public void Sauvegarder()
         {
             //Gestion d'exception dans le cas où il y a problème avec le serveur

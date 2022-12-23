@@ -63,6 +63,7 @@ namespace GestionEquipeHockey.Formulaires
             {
                 btnConfirmerContrat.Enabled = true;
                 txtCode_gardien.Text = "";
+                // Tanté de mettre le champs à null pour insérer dans la base de donner,mais ne fonctionne pas
                 //txtCode_gardien.Text = null;
             }
         }
@@ -91,6 +92,7 @@ namespace GestionEquipeHockey.Formulaires
             {
                 btnConfirmerContrat.Enabled = true;
                 txtCode_joueur.Text = "";
+                // Tanté de mettre le champs à null pour insérer dans la base de donner,mais ne fonctionne pas
                 //txtCode_joueur.Text = null;
             }
         }
@@ -239,6 +241,11 @@ namespace GestionEquipeHockey.Formulaires
                 }
         }
 
+        /// <summary>
+        /// Bouton qui confirme la gestion d'erreur pour le code du gardien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCodeGardiensContinuer_Click(object sender, EventArgs e)
         {
             // Vérifier si le code du joueur est chiffre de longeur 5
@@ -255,6 +262,12 @@ namespace GestionEquipeHockey.Formulaires
             }
         }
 
+        /// <summary>
+        /// Bouton Check pour choisir une option ou l'autre 
+        /// Lié à l'autre bouton Check 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkJoueurs_CheckedChanged(object sender, EventArgs e)
         {
             if (checkJoueurs.Checked)
@@ -277,6 +290,13 @@ namespace GestionEquipeHockey.Formulaires
            
         }
 
+
+        /// <summary>
+        /// Bouton Check pour choisir une option ou l'autre 
+        /// Lié à l'autre bouton Check 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void checkGardiens_CheckedChanged(object sender, EventArgs e)
         {
             if (checkGardiens.Checked)

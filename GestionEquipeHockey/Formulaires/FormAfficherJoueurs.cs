@@ -442,6 +442,10 @@ namespace GestionEquipeHockey.Formulaires
             Classe_statique.listJoueurs.Remove(obj);
 
         }
+
+        /// <summary>
+        /// Permet de sauvegarder les modifications apporter 
+        /// </summary>
         public void Sauvegarder()
         {
             //Gestion d'exception dans le cas où il y a problème avec le serveur
@@ -461,6 +465,7 @@ namespace GestionEquipeHockey.Formulaires
         }
 
         /// <summary>
+        /// Bouton qui permet d'afficher la recheche fait selon l'option du combobox
         /// Liens: https://stackoverflow.com/questions/16558212/how-to-select-max-and-min-value-of-any-column-of-datagridview  
         /// </summary>
         /// <param name="sender"></param>

@@ -87,6 +87,11 @@ namespace GestionEquipeHockey.Formulaires
             
         }
 
+        /// <summary>
+        /// Lors du click sur ce bouton quitte l'applcation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
